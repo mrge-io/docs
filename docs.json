@@ -88,7 +88,7 @@
   "integrations": {
     "posthog": {
       "apiKey": "phc_DBTnUOZLA1htEQqXnj10SLMQFu7hs77g17HyS0PwNHK",
-      "apiHost": "https://mrge.io/ingest"
+      "apiHost": "https://www.mrge.io/ingest"
     }
   }
 }
