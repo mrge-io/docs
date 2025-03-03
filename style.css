@@ -22,3 +22,7 @@
 .rounded-xl {
   border-radius: var(--rounded-xl, 6px);
 }
+
+.codeblock-dark {
+  background-color: #17181a !important;
+}
