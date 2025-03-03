@@ -1,14 +1,13 @@
 ---
-title: "Keep your stack updated"
-description: "Sync with trunk, restack branches, and handle conflicts."
+title: 'Keep your stack updated'
+description: 'Sync with trunk, restack branches, and handle conflicts.'
 ---
 
 When your trunk (`main`/`master`) changes—or you need to revise something mid-stack—**mg** streamlines the process with commands like `mg sync`, `mg modify`, and more.
 
 <Note>
-  **Prerequisites** 
-  - [Create a stack](/docs/how-to-guides/create-a-stack) 
-  - Familiarity with `mg push` and basic Git conflict resolution
+  **Prerequisites** - [Create a stack](/how-to-guides/create-a-stack) -
+  Familiarity with `mg push` and basic Git conflict resolution
 </Note>
 
 ---
@@ -35,19 +34,13 @@ mg sync
 </Warning>
 
 ---
+
 ## 2. Update mid-stack branches
 
 <Steps>
-  <Step title="Switch to the branch">
-    ```bash 
-    mg checkout feature_2 
-    ```
-  </Step>
+  <Step title="Switch to the branch">```bash mg checkout feature_2 ```</Step>
   <Step title="Make changes and commit">
-    ```bash 
-    mg add . 
-    mg commit -m "Address feedback" # or mg modify to amend 
-    ```
+    ```bash mg add . mg commit -m "Address feedback" # or mg modify to amend ```
   </Step>
   <Step title="Handle restacking">
     mg automatically re-stacks child branches on top. If you see conflicts, fix
@@ -95,18 +88,13 @@ Your PRs update on mrge.io / GitHub accordingly.
 ---
 
 ## 5. Splitting or folding commits
+
 <Steps>
   <Step title="Split commits">
-    Breaks large commits into smaller ones:
-    ```bash
-    mg split
-    ```
+    Breaks large commits into smaller ones: ```bash mg split ```
   </Step>
   <Step title="Fold/squash commits">
-    If you want to combine commits:
-    ```bash
-    mg split --fold
-    ```
+    If you want to combine commits: ```bash mg split --fold ```
   </Step>
 </Steps>
 
@@ -117,8 +105,8 @@ Your PRs update on mrge.io / GitHub accordingly.
 Your stack is in sync with trunk. Each branch can be pushed or merged independently.
 
 <Tip>
-  - **Ready to merge?** See [Merge your stack](/docs/how-to-guides/merge-your-stack).
-  - **Troubleshooting?** Check our [FAQ](/docs/faq-and-troubleshooting).
+  - **Ready to merge?** See [Merge your stack](/how-to-guides/merge-your-stack).
+  - **Troubleshooting?** Check our [FAQ](/faq-and-troubleshooting).
 </Tip>
 
 **Happy syncing!**

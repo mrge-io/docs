@@ -1,6 +1,6 @@
 ---
-title: "FAQ & troubleshooting"
-description: "Common questions and solutions for mrge"
+title: 'FAQ & troubleshooting'
+description: 'Common questions and solutions for mrge'
 ---
 
 This page addresses frequently asked questions and common obstacles you might encounter when using **mrge**. If you don't find your issue here, check our [community forums](https://community.mrge.io) or open a GitHub issue.
@@ -16,7 +16,7 @@ This page addresses frequently asked questions and common obstacles you might en
      ```bash
      git fetch origin main
      ```
-  2. Run [`mg sync`](/docs/reference/mg-sync) to rebase or merge your current branch onto the latest commits.
+  2. Run [`mg sync`](/reference/mg-sync) to rebase or merge your current branch onto the latest commits.
 
 ## I can't push my stack – conflict with remote?
 
@@ -33,9 +33,9 @@ This page addresses frequently asked questions and common obstacles you might en
 ## Error codes or known tricky scenarios
 
 - **`E-101: No .mrge directory found`**
-  - Ensure you've run [`mg init`](/docs/reference/mg-init) in your repo.
+  - Ensure you've run [`mg init`](/reference/mg-init) in your repo.
 - **`E-202: Branch not tracked`**
-  - Adopt the branch with [`mg adopt <branch_name>`](/docs/reference/mg-adopt) or recreate it using [`mg create`](/docs/reference/mg-create).
+  - Adopt the branch with [`mg adopt <branch_name>`](/reference/mg-adopt) or recreate it using [`mg create`](/reference/mg-create).
 - **`E-303: Force push required`**
   - This appears if you rewrite commits on a published branch. You can force push, but coordinate with teammates to avoid confusion.
 - **`E-404: Branch does not exist`**
@@ -46,13 +46,13 @@ This page addresses frequently asked questions and common obstacles you might en
 ## General tips
 
 - **Keep Branches Small**: Smaller changes reduce merge conflicts and simplify troubleshooting.
-- **Sync Frequently**: If you're constantly out of date, [handle updates & sync](/docs/how-to-guides/handle-updates-sync) more often.
+- **Sync Frequently**: If you're constantly out of date, [handle updates & sync](/how-to-guides/handle-updates-sync) more often.
 - **Check `mg list`**: If a branch is missing or incorrectly parented, reparent or adopt as needed.
 
 ---
 
 ### Still stuck?
 
-- **[How-to guides](/docs/how-to-guides/create-stacked-prs)**: Step-by-step instructions for common workflows.
-- **[Advanced workflows](/docs/advanced/advanced-workflows)**: Deeper dives for complex or monorepo setups.
-- **[Integration tips](/docs/advanced/integration-tips)**: Ensure your CI/CD pipeline isn't causing unexpected conflicts.
+- **[How-to guides](/how-to-guides/create-stacked-prs)**: Step-by-step instructions for common workflows.
+- **[Advanced workflows](/advanced/advanced-workflows)**: Deeper dives for complex or monorepo setups.
+- **[Integration tips](/advanced/integration-tips)**: Ensure your CI/CD pipeline isn't causing unexpected conflicts.

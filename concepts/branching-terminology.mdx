@@ -1,6 +1,6 @@
 ---
-title: "Branching terminology"
-description: "Key Git and mrge terms for stacked development"
+title: 'Branching terminology'
+description: 'Key Git and mrge terms for stacked development'
 ---
 
 When working with **stacked pull requests**, you'll encounter specific terms and concepts—both from Git and from mrge. Use this page as a quick reference for branch-related jargon.
@@ -22,7 +22,7 @@ A **parent branch** is the branch that your current branch is based on.
 A **child branch** is a branch whose parent is another active branch in the stack.
 
 - For example, if `feature_2` depends on commits in `feature_1`, then `feature_2` is considered a child of `feature_1`.
-- You can see these relationships by running [`mg list`](/docs/reference/mg-list)
+- You can see these relationships by running [`mg list`](/reference/mg-list)
 
 ## Orphan branch
 
@@ -33,7 +33,7 @@ In mrge, an **orphan branch** is any branch that has been removed from the track
   might also become orphaned.
 </Warning>
 
-- You can orphan a branch with [`mg orphan`](/docs/reference/mg-orphan).
+- You can orphan a branch with [`mg orphan`](/reference/mg-orphan).
 - Once orphaned, its children (if any) will need a new parent or might also be orphaned.
 
 ## Sync
@@ -45,7 +45,7 @@ In mrge, an **orphan branch** is any branch that has been removed from the track
   keeps your branches current with the main codebase.
 </Tip>
 
-- Typically done via [`mg sync`](/docs/reference/mg-sync).
+- Typically done via [`mg sync`](/reference/mg-sync).
 - Sync can rebase or merge your branches, ensuring they stay current with teammates' commits.
 
 ## Upstream & downstream
@@ -57,6 +57,6 @@ These are general Git terms:
 
 ## Where to see these concepts in action
 
-- **[Create a stacked PR](/docs/how-to-guides/create-stacked-prs)**: Demonstrates parent-child relationships when stacking multiple features.
-- **[Handle updates & sync](/docs/how-to-guides/handle-updates-sync)**: Learn how to keep branches in sync with the latest changes in `main`.
-- **[Adopt or orphan a branch](/docs/how-to-guides/adopt-or-orphan-branch)**: Manage how branches enter or leave mrge's tracking system.
+- **[Create a stacked PR](/how-to-guides/create-stacked-prs)**: Demonstrates parent-child relationships when stacking multiple features.
+- **[Handle updates & sync](/how-to-guides/handle-updates-sync)**: Learn how to keep branches in sync with the latest changes in `main`.
+- **[Adopt or orphan a branch](/how-to-guides/adopt-or-orphan-branch)**: Manage how branches enter or leave mrge's tracking system.

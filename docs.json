@@ -12,61 +12,61 @@
       {
         "group": "Overview",
         "pages": [
-          "docs/overview",
-          "docs/quickstart",
-          "docs/common-commands",
-          "docs/installation"
+          "overview",
+          "quickstart",
+          "common-commands",
+          "installation"
         ]
       },
       {
         "group": "Core concepts",
         "pages": [
-          "docs/concepts/overview",
-          "docs/concepts/branching-terminology"
+          "concepts/overview",
+          "concepts/branching-terminology"
         ]
       },
       {
         "group": "How-to guides",
         "pages": [
-          "docs/how-to-guides/initialize-in-repo",
-          "docs/how-to-guides/create-a-pull-request",
-          "docs/how-to-guides/create-a-stack",
-          "docs/how-to-guides/keep-your-stack-updated",
-          "docs/how-to-guides/merge-your-stack"
+          "how-to-guides/initialize-in-repo",
+          "how-to-guides/create-a-pull-request",
+          "how-to-guides/create-a-stack",
+          "how-to-guides/keep-your-stack-updated",
+          "how-to-guides/merge-your-stack"
         ]
       },
       {
         "group": "Reference",
         "pages": [
-          "docs/reference/command-cheatsheet",
-          "docs/reference/mg-init",
-          "docs/reference/mg-create",
-          "docs/reference/mg-list",
-          "docs/reference/mg-branch",
-          "docs/reference/mg-checkout",
-          "docs/reference/mg-push",
-          "docs/reference/mg-sync",
-          "docs/reference/mg-orphan",
-          "docs/reference/mg-help",
-          "docs/reference/mg-commit",
-          "docs/reference/mg-split",
-          "docs/reference/mg-adopt",
-          "docs/reference/mg-reparent",
-          "docs/reference/mg-next",
-          "docs/reference/mg-prev"
+          "reference/command-cheatsheet",
+          "reference/mg-init",
+          "reference/mg-create",
+          "reference/mg-list",
+          "reference/mg-branch",
+          "reference/mg-checkout",
+          "reference/mg-push",
+          "reference/mg-sync",
+          "reference/mg-orphan",
+          "reference/mg-help",
+          "reference/mg-commit",
+          "reference/mg-split",
+          "reference/mg-adopt",
+          "reference/mg-reparent",
+          "reference/mg-next",
+          "reference/mg-prev"
         ]
       },
       {
         "group": "Advanced usage",
         "pages": [
-          "docs/advanced/partial-merges-split-commits",
-          "docs/advanced/rolling-back-mid-stack"
+          "advanced/partial-merges-split-commits",
+          "advanced/rolling-back-mid-stack"
         ]
       },
       {
         "group": "Additional resources",
         "pages": [
-          "docs/faq-and-troubleshooting"
+          "faq-and-troubleshooting"
         ]
       }
     ]

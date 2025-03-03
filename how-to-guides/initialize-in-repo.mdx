@@ -1,15 +1,16 @@
 ---
-title: "Initialize mrge"
-description: "Set up mg in your local repo to start using stacked PRs."
+title: 'Initialize mrge'
+description: 'Set up mg in your local repo to start using stacked PRs.'
 ---
 
 Learn how to configure **`mg`** so it knows your trunk branch and can manage stacked PRs.
 
 <Info>
-  **Why initialize?** 
-  
-  `mg init` sets your trunk (often `main`), ensuring mg
-  knows where to base new branches and how to restack them.
+  **Why initialize?**
+
+`mg init` sets your trunk (often `main`), ensuring mg
+knows where to base new branches and how to restack them.
+
 </Info>
 
 ---
@@ -23,15 +24,11 @@ Learn how to configure **`mg`** so it knows your trunk branch and can manage sta
     ```
   </Step>
 
-  <Step title="Run mg init">
-    ```bash 
-    mg init 
-    ``` 
-    
-    This will: 
-    - Prompt you to select `main` or `master` (or another trunk branch) 
-    - Create a `.git/mrge_repo_config` file for storing config
-  </Step>
+<Step title="Run mg init">
+  ```bash mg init ``` This will: - Prompt you to select `main` or `master` (or
+  another trunk branch) - Create a `.git/mrge_repo_config` file for storing
+  config
+</Step>
 
   <Step title="Confirm It Worked">
     ```bash 
@@ -52,7 +49,7 @@ Learn how to configure **`mg`** so it knows your trunk branch and can manage sta
 
 ## Next steps
 
-- Try the [Quickstart](/docs/quickstart) for a hands-on example of creating and pushing stacked branches.
-- Or see [Create a Pull Request](/docs/how-to-guides/create-a-pull-request) for a single-branch workflow.
+- Try the [Quickstart](/quickstart) for a hands-on example of creating and pushing stacked branches.
+- Or see [Create a Pull Request](/how-to-guides/create-a-pull-request) for a single-branch workflow.
 
 That's it! You've initialized **mrge** in your local repository.
