@@ -1,34 +1,34 @@
 ---
-title: "Create a stack"
-description: "Build multiple PRs on top of each other with mg."
+title: 'Create a stack'
+description: 'Build multiple pull requests on top of each other with mg.'
 ---
 
-# Create a stack
+Stacks allow you to break a big feature into multiple dependent branches, each with its own PR. This approach makes it easier to review smaller, self-contained changes instead of dealing with one massive pull request.
 
-Stacks allow you to break a big feature into multiple dependent branches, each with its own PR. Reviewers can check small diffs instead of one massive change.
+<Note>
 
-> **Prerequisites**
->
-> - Repo initialized with `mg init`
-> - Familiarity with basic mg commands (`mg create`, `mg push`, etc.)
+**Prerequisites**
+
+- A repo already [initialized with `mg init`](/how-to-guides/initialize-in-repo).
+- Basic familiarity with key mg commands like `mg create` and `mg push`.
+
+</Note>
 
 ---
 
 ## 1. Start from your trunk
 
+Begin by checking out your trunk branch (often `main` or `master`):
+
 ```bash
 mg checkout main
-```
-
-or:
-
-```bash
-mg checkout master
 ```
 
 ---
 
 ## 2. First branch
+
+Make your first set of changes:
 
 ```bash
 echo "console.log('Part A')" > partA.js
@@ -36,15 +36,21 @@ mg add partA.js
 mg create -m "feat: part A"
 ```
 
-Push if you want to open a PR right away:
+You can open a pull request immediately by pushing:
 
 ```bash
 mg push
 ```
 
+<Tip>
+When you push, `mg` will prompt you to update the PR title and description if needed.
+</Tip>
+
 ---
 
 ## 3. Second branch on top
+
+Let's build on that first branch:
 
 ```bash
 echo "console.log('Part B')" > partB.js
@@ -52,7 +58,13 @@ mg add partB.js
 mg create -m "feat: part B"
 ```
 
-Now `mg list` might show:
+Now, if you run:
+
+```bash
+mg list
+```
+
+You'll see a short tree:
 
 ```
 main
@@ -60,31 +72,48 @@ main
     └─ feat_part_B
 ```
 
+Each of these branches can become its own PR.
+
 ---
 
-## 4. Push & review each PR
+## 4. Push & review your branches
 
 ```bash
 mg push --all
 ```
 
-This creates/updates two PRs on mrge.io (and GitHub). Each branch is smaller, but collectively they form one bigger feature.
+This command updates (or creates) your pull requests on Mrge (and GitHub). Each branch is a smaller PR, but together, they form one cohesive feature. Your team can review them in sequence or parallel, merging them once approved.
+
+<Tip>
+If you prefer pushing branches one at a time, that's fine, too. Just call `mg push` while on each branch.
+</Tip>
 
 ---
 
-## 5. Keep navigating
+## 5. Keep moving
 
-- **Move up**: `mg next`
-- **Move down**: `mg prev`
-- **Re-check** the tree: `mg list`
+- **Check out the next branch in the stack**: `mg next`
+- **Check out the previous branch in the stack**: `mg prev`
+- **Visualize again**: `mg list`
 
-You can keep stacking as many branches as you need.
+Add as many branches as you need for each logical slice of your feature.
+
+---
+
+### Best Practices
+
+- **One logical change per branch**: Keep each branch focused on a single feature or sub-feature.
+- **Name branches descriptively**: It's easier to see what each PR does when reading the branch list.
+- **Push frequently**: Ensures your teammates can see your ongoing work and provide feedback early.
 
 ---
 
 ### Next steps
 
-- **Sync** changes from `main` or fix mid-stack branches with [Keep your stack updated](/how-to-guides/keep-your-stack-updated).
-- **Merge** your entire stack in the [mrge UI](/how-to-guides/merge-your-stack) once everything's approved.
+- **[Keep your stack updated](/how-to-guides/keep-your-stack-updated)**: Sync from `main` if teammates add new commits.
+- **[Merge your stack in Mrge](/how-to-guides/merge-your-stack)**: Once each PR is ready, merge them in the right order via the Mrge UI.
 
-That's it! You've built a multi-branch, multi-PR stack that's simpler for your team to review.
+<Check>
+  That's it! You've built a multi-branch, multi-PR stack that's simpler for your
+  team to review and merge. Happy stacking!
+</Check>

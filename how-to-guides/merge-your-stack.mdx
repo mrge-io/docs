@@ -1,42 +1,75 @@
 ---
-title: "Merge your stack"
-description: "Use the mrge UI to merge stacked PRs in the correct order."
+title: 'Merge your stack'
+description: 'Use the mrge UI to merge stacked PRs in the correct order.'
 ---
 
-Once your stacked PRs are approved, **mrge** offers a clean UI ([mrge.io](https://mrge.io)) for merging them in the right order—no guessing or manual rebasing.
+Once your stacked pull requests are approved, **mrge** offers a dedicated UI ([mrge.io](https://mrge.io)) for merging them in the **correct order**—no guesswork or manual rebasing required. Each dependent branch is merged in sequence, preventing conflicts and ensuring a clean commit history.
 
-> **Tip**: You can also merge via GitHub, but the mrge UI provides a stacked view to help you see dependencies at a glance.
+<Note>
+
+You _can_ merge in GitHub's interface if you prefer. However, the **mrge** UI displays an at-a-glance view of your stack, making it easy to see dependencies, merge partially, or skip certain branches if needed.
+
+</Note>
 
 ---
 
-## 1. Open your repository on mrge
+## Why merge in mrge?
 
-1. **Sign in** at [mrge.io](https://mrge.io).
-2. Navigate to your repository.
-3. **Select** the stack you want to merge.
+- **Automatic Ordering**: Child branches can't merge until their parent is merged, so you never accidentally merge a downstream branch first.
+- **Clear Visibility**: See which branches are ready to merge and which are still awaiting review or CI checks.
+- **Partial Merges**: Land just the bottom few branches if needed, and mrge will restack the remaining branches on top of the newly updated trunk.
+
+---
+
+## 1. Open your repository in mrge
+
+<Steps>
+  <Step title="Sign in">
+    Go to [mrge.io](https://mrge.io) and sign in with your GitHub account.
+  </Step>
+  <Step title="Locate your repo">
+    From your dashboard, select the repository that contains your stacked PRs.
+  </Step>
+  <Step title="Choose your stack">
+    mrge automatically detects your open PRs and displays them in a stack view.
+  </Step>
+</Steps>
 
 ---
 
 ## 2. Review branches
 
-- Click on each branch in the UI to see diffs and comments.
-- If needed, go back locally, edit, and push changes. (See [Keep your stack updated](/how-to-guides/keep-your-stack-updated).)
+Before merging, you might want to:
+
+- **Check diffs**: Click each branch to see its changes, commits, and any review comments.
+- **Update the code**: If there's feedback or a last-minute fix, go back to your local setup, edit, and push changes ([Keep your stack updated](/how-to-guides/keep-your-stack-updated)). mrge will reflect those updates automatically.
 
 ---
 
 ## 3. Merge in sequence
 
-1. Click **Merge** on the lowest branch in the stack (the parent).
-2. mrge merges it and re-stacks child branches automatically.
-3. Continue merging up the stack until all branches are done.
+<Steps>
+  <Step title="Merge the bottom branch">
+    Click **Merge** on the lowest branch in the stack (the "parent"). mrge
+    merges it and updates the trunk automatically.
+  </Step>
+  <Step title="Continue up the stack">
+    Move to the next branch that depends on the one you just merged, and click
+    **Merge** again. Repeat until you reach the top.
+  </Step>
+</Steps>
 
-> **Partial merges**: If you only want to land the first few branches, that's fine—mrge restacks the remaining branches on top of the newly updated trunk.
+<Info>
+
+**Partial merges**: If you only want to merge the first few branches for now, that's totally fine—mrge restacks the remaining branches on top of the new trunk.
+
+</Info>
 
 ---
 
-## 4. Check locally
+## 4. Sync locally
 
-After merges:
+Once you've merged some or all of your branches, update your local environment:
 
 ```bash
 mg sync

@@ -3,8 +3,6 @@ title: "mg commit"
 description: "Commit changes, optionally auto-generate a new branch"
 ---
 
-# mg commit
-
 ## Name
 
 `mg commit` — Create a Git commit, with optional branch auto-generation.
@@ -35,7 +33,7 @@ mg commit -m "Fix login bug"
 mg commit -m "Add UI tests" -b
 ```
 
-## Notes / Caveats
-
-- This feature is optional; standard Git usage is still valid.
-- If using `-b`, ensure your `.mrgeconfig` sets rules for auto-generated names (if desired).
+<Note>
+  - This feature is optional; standard Git usage is still valid.
+  - If using `-b`, ensure your `.mrgeconfig` sets rules for auto-generated names (if desired).
+</Note>

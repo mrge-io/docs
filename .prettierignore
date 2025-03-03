@@ -1,0 +1,20 @@
+# Build output
+dist/
+build/
+out/
+.next/
+
+# Dependencies
+node_modules/
+
+# Git related
+.git/
+
+# Misc
+.DS_Store
+*.log
+.cache/
+
+# Generated files
+*.min.js
+*.bundle.js 

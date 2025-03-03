@@ -5,10 +5,11 @@ description: "Sync with trunk, restack branches, and handle conflicts."
 
 When your trunk (`main`/`master`) changes—or you need to revise something mid-stack—**mg** streamlines the process with commands like `mg sync`, `mg modify`, and more.
 
-> **Prerequisites**
->
-> - [Create a stack](/how-to-guides/create-a-stack)
-> - Familiarity with `mg push` and basic Git conflict resolution
+<Note>
+  **Prerequisites** 
+  - [Create a stack](/how-to-guides/create-a-stack) 
+  - Familiarity with `mg push` and basic Git conflict resolution
+</Note>
 
 ---
 
@@ -18,27 +19,41 @@ When your trunk (`main`/`master`) changes—or you need to revise something mid-
 mg sync
 ```
 
-- **Fetches** new commits from `main`.
-- **Prompts** to delete merged branches.
-- **Restacks** any child branches on top of the updated trunk.
+<Steps>
+  <Step title="Fetch new commits">mg fetches new commits from `main`.</Step>
+  <Step title="Clean up merged branches">
+    mg prompts to delete merged branches.
+  </Step>
+  <Step title="Restack branches">
+    mg restacks any child branches on top of the updated trunk.
+  </Step>
+</Steps>
 
-If conflicts appear, follow the on-screen instructions to resolve them and run `mg continue`.
+<Warning>
+  If conflicts appear, follow the on-screen instructions to resolve them and run
+  `mg continue`.
+</Warning>
 
 ---
-
 ## 2. Update mid-stack branches
 
-- Switch to the relevant branch:
-  ```bash
-  mg checkout feature_2
-  ```
-- Make changes and commit them:
-  ```bash
-  mg add .
-  mg commit -m "Address feedback"
-  # or mg modify to amend
-  ```
-- mg automatically re-stacks child branches on top. If you see conflicts, fix them, `mg add .`, then `mg continue`.
+<Steps>
+  <Step title="Switch to the branch">
+    ```bash 
+    mg checkout feature_2 
+    ```
+  </Step>
+  <Step title="Make changes and commit">
+    ```bash 
+    mg add . 
+    mg commit -m "Address feedback" # or mg modify to amend 
+    ```
+  </Step>
+  <Step title="Handle restacking">
+    mg automatically re-stacks child branches on top. If you see conflicts, fix
+    them, `mg add .`, then `mg continue`.
+  </Step>
+</Steps>
 
 ---
 
@@ -62,28 +77,38 @@ Your PRs update on mrge.io / GitHub accordingly.
 
 ## 4. Orphan / adopt branches
 
-- **Orphan**: remove a branch from the stack but keep it in Git:
-  ```bash
-  mg orphan <branch>
-  ```
-- **Adopt**: bring an existing Git branch into mg's stack:
-  ```bash
-  mg adopt <branch>
-  ```
+<Steps>
+  <Step title="Orphan a branch">
+    Remove a branch from the stack but keep it in Git:
+    ```bash
+    mg orphan <branch>
+    ```
+  </Step>
+  <Step title="Adopt a branch">
+    Bring an existing Git branch into mg's stack:
+    ```bash
+    mg adopt <branch>
+    ```
+  </Step>
+</Steps>
 
 ---
 
 ## 5. Splitting or folding commits
-
-- **Split**: breaks large commits into smaller ones:
-  ```bash
-  mg split
-  ```
-- **Fold** / squash: if you want to combine commits, see:
-  ```bash
-  mg split --fold
-  ```
-  (Depending on your version of mg.)
+<Steps>
+  <Step title="Split commits">
+    Breaks large commits into smaller ones:
+    ```bash
+    mg split
+    ```
+  </Step>
+  <Step title="Fold/squash commits">
+    If you want to combine commits:
+    ```bash
+    mg split --fold
+    ```
+  </Step>
+</Steps>
 
 ---
 
@@ -91,7 +116,9 @@ Your PRs update on mrge.io / GitHub accordingly.
 
 Your stack is in sync with trunk. Each branch can be pushed or merged independently.
 
-- **Ready to merge?** See [Merge your stack](/how-to-guides/merge-your-stack).
-- **Troubleshooting?** Check our [FAQ](/faq-and-troubleshooting).
+<Tip>
+  - **Ready to merge?** See [Merge your stack](/how-to-guides/merge-your-stack).
+  - **Troubleshooting?** Check our [FAQ](/faq-and-troubleshooting).
+</Tip>
 
 **Happy syncing!**
