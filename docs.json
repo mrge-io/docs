@@ -1,9 +1,10 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "mrge Documentation",
   "colors": {
-    "primary": "#000000"
+    "primary": "#000000",
+    "light": "#FFF"
   },
   "favicon": "/logo/favicon.png",
   "navigation": {

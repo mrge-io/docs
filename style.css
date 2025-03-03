@@ -1,0 +1,24 @@
+.bg-background-color-light {
+  background-color: #000;
+}
+
+:root {
+  --background-dark: 0 0 0; /* RGB for black */
+  --background-light: 0 0 0; /* RGB for black */
+  --tw-bg-opacity: 1;
+  --rounded-xl: 6px;
+}
+
+.dark\:bg-background-dark:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--background-dark) / var(--tw-bg-opacity));
+}
+
+.bg-background-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--background-light) / var(--tw-bg-opacity));
+}
+
+.rounded-xl {
+  border-radius: var(--rounded-xl, 6px);
+}
