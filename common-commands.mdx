@@ -1,0 +1,24 @@
+---
+title: 'Common CLI commands'
+description: 'Quick reference for frequently used mg commands.'
+---
+
+| Command                       | Description                                                |
+| ----------------------------- | ---------------------------------------------------------- |
+| **`mg create <branch_name>`** | Create a new branch on top of the one you're on            |
+| **`mg list`**                 | View your entire stack/tree of branches                    |
+| **`mg checkout <branch>`**    | Switch to a different branch                               |
+| **`mg push`**                 | Push the current branch (PR) to remote                     |
+| **`mg push --all`**           | Push the entire stack to remote                            |
+| **`mg sync`**                 | Sync with remote (rebases and re-stacks if `main` changed) |
+| **`mg next`** / **`mg prev`** | Move up or down in the stack                               |
+
+<Note>
+  Anything mg doesn't recognize is passed to Git, so your usual workflow remains
+  intact.
+</Note>
+
+<Tip>
+  For a complete list of commands and detailed usage, check out the [full
+  Command Cheatsheet](/reference/command-cheatsheet).
+</Tip>

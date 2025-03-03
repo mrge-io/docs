@@ -1,0 +1,32 @@
+---
+title: 'Rolling Back Merges in Mid-Stack'
+description: 'How to handle reverting changes when using stacked branches'
+---
+
+# Rolling Back Merges in Mid-Stack
+
+## Overview
+
+Sometimes after merging a stacked branch, you may discover issues that require rolling back. This process is more complex with stacked branches since child branches depend on the merged changes.
+
+## How it works
+
+If you merged `feature_1` but discovered an issue, you can roll back by:
+
+1. Reverting the merge in `main` via standard Git
+2. Running [`mg sync`](/reference/mg-sync) so child branches rebase onto the reverted changes
+3. If necessary, rename or re-parent child branches to reflect the new timeline
+
+## Best practices
+
+- Communicate with team members about the rollback to prevent confusion
+- Consider creating a new branch for the fix rather than immediately re-merging the reverted branch
+- Take additional time to test thoroughly before attempting to merge again
+
+## Recovering after a rollback
+
+After rolling back a merge, you have several options:
+
+- Fix the issue in the original branch and re-merge
+- Create a new branch with only the fixed portion of the feature
+- Completely redesign the approach if the issue requires a fundamental change

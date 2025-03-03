@@ -1,0 +1,27 @@
+---
+title: 'Partial Merges with Split Commits'
+description: 'Merging only portions of a branch while continuing development'
+---
+
+# Partial Merges with Split Commits
+
+## Overview
+
+When working with large features, you may want to merge only a portion of your branch into the main trunk while continuing development on the remaining changes.
+
+## How it works
+
+- **Scenario**: You want to merge only a portion of a large branch into `main`, leaving other commits for later.
+- **Solution**: Use [`mg split`](/reference/mg-split) to separate commits, then merge or cherry-pick the relevant subset. The unmerged portion remains stacked for further development.
+
+## Step-by-step process
+
+1. Use `mg split` to separate your branch into smaller, logically distinct parts
+2. Merge the ready portion into main while continuing work on the remaining changes
+3. The unmerged portion remains stacked, allowing you to continue development
+
+## Benefits
+
+- Enables incremental delivery of features
+- Reduces the size and complexity of individual merges
+- Allows you to get feedback on portions of your work while continuing development

@@ -3,120 +3,91 @@
   "theme": "mint",
   "name": "mrge Documentation",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0A7F63"
+    "primary": "#FFFFFF"
   },
-  "favicon": "/logo/logo.svg",
+  "favicon": "/logo/wordmark.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Getting started",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "overview",
-              "quickstart",
-              "installation"
-            ]
-          },
-          {
-            "group": "Core concepts",
-            "pages": [
-              "concepts/overview",
-              "concepts/branching-terminology"
-            ]
-          },
-          {
-            "group": "How-to guides",
-            "pages": [
-              "how-to-guides/initialize-in-repo",
-              "how-to-guides/create-a-pull-request",
-              "how-to-guides/create-a-stack",
-              "how-to-guides/keep-your-stack-updated",
-              "how-to-guides/merge-your-stack"
-            ]
-          },
-          {
-            "group": "Reference",
-            "pages": [
-              "reference/command-cheatsheet",
-              "reference/mg-init",
-              "reference/mg-create",
-              "reference/mg-list",
-              "reference/mg-branch",
-              "reference/mg-checkout",
-              "reference/mg-push",
-              "reference/mg-sync",
-              "reference/mg-orphan",
-              "reference/mg-help",
-              "reference/mg-commit",
-              "reference/mg-split",
-              "reference/mg-adopt",
-              "reference/mg-reparent",
-              "reference/mg-next",
-              "reference/mg-prev"
-            ]
-          },
-          {
-            "group": "Advanced usage",
-            "pages": [
-              "advanced/advanced-workflows",
-              "advanced/integration-tips"
-            ]
-          },
-          {
-            "group": "Configuration",
-            "pages": [
-              "config/config-reference"
-            ]
-          },
-          {
-            "group": "Additional resources",
-            "pages": [
-              "faq-and-troubleshooting"
-            ]
-          }
+        "group": "Overview",
+        "pages": [
+          "overview",
+          "quickstart",
+          "common-commands",
+          "installation"
+        ]
+      },
+      {
+        "group": "Core concepts",
+        "pages": [
+          "concepts/overview",
+          "concepts/branching-terminology"
+        ]
+      },
+      {
+        "group": "How-to guides",
+        "pages": [
+          "how-to-guides/initialize-in-repo",
+          "how-to-guides/create-a-pull-request",
+          "how-to-guides/create-a-stack",
+          "how-to-guides/keep-your-stack-updated",
+          "how-to-guides/merge-your-stack"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "reference/command-cheatsheet",
+          "reference/mg-init",
+          "reference/mg-create",
+          "reference/mg-list",
+          "reference/mg-branch",
+          "reference/mg-checkout",
+          "reference/mg-push",
+          "reference/mg-sync",
+          "reference/mg-orphan",
+          "reference/mg-help",
+          "reference/mg-commit",
+          "reference/mg-split",
+          "reference/mg-adopt",
+          "reference/mg-reparent",
+          "reference/mg-next",
+          "reference/mg-prev"
+        ]
+      },
+      {
+        "group": "Advanced usage",
+        "pages": [
+          "advanced/partial-merges-split-commits",
+          "advanced/rolling-back-mid-stack"
+        ]
+      },
+      {
+        "group": "Additional resources",
+        "pages": [
+          "faq-and-troubleshooting"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "GitHub",
-          "href": "https://github.com/mrge-org/mrge",
-          "icon": "github"
-        },
-        {
-          "anchor": "Twitter",
-          "href": "https://twitter.com/mrge_dev",
-          "icon": "twitter"
-        }
-      ]
-    }
+    ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
+  "logo": "/logo/wordmark.svg",
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "https://github.com/mrge-org/mrge/discussions"
+        "href": "mailto:contact@mrge.io"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Get Started",
-      "href": "https://mrge-docs.com/quickstart"
+      "label": "Open app",
+      "href": "https://mrge.io"
     }
   },
-  "footer": {
-    "socials": {
-      "github": "https://github.com/mrge-org/mrge",
-      "twitter": "https://twitter.com/mrge_dev"
+  "integrations": {
+    "posthog": {
+      "apiKey": "phc_DBTnUOZLA1htEQqXnj10SLMQFu7hs77g17HyS0PwNHK",
+      "apiHost": "https://eu.i.posthog.com"
     }
   }
 }

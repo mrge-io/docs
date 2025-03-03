@@ -1,72 +1,56 @@
 ---
 title: 'Quickstart'
-description: 'Create your first stacked PR.'
+description: 'Create your first stacked PR in minutes.'
 ---
 
-This guide shows how to **create your first two stacked pull requests** on [mrge.io](https://mrge.io) (or GitHub).  
-In about **5 minutes**, you'll have:
-
-- A trunk branch (`main`)
-- Two feature branches stacked on top
-- Each branch opened as a PR in [mrge.io](https://mrge.io) (and GitHub)
+In **just a few steps**, you'll create **two stacked pull requests** using `mg` and see them on [mrge.io](https://mrge.io) (or GitHub).
 
 ---
 
-## Quick installation
-
-For macOS users:
+## Quick installation (macOS)
 
 ```bash
 brew install mrge-org/tap/mg
 ```
 
 <Note>
-  If you're not on macOS or need more detailed installation steps, check the
-  [Full installation guide](/installation).
+  If you're not on macOS or need detailed instructions, see the [full
+  installation guide](/installation).
 </Note>
 
 ---
 
-## 1) Initialize & setup
+## 1) Initialize & set up
 
 ```bash
 cd /path/to/your-repo
 mg init
 ```
 
-<Info>
-  This will **identify your trunk branch** (usually `main` or `master`) so mg
-  knows where to base new branches.
-</Info>
+This tells mg which branch is your trunk (`main` or `master`).
 
 <Tip>
-  **Authentication tip:** If you haven't authenticated with GitHub, mg may ask
-  for a personal access token or use the GitHub CLI (`gh`).
+  **Authentication**: If you're not already logged in, mg may prompt you for a
+  GitHub personal access token or use the GitHub CLI (`gh`) for OAuth.
 </Tip>
 
 ---
 
-## 2) Building your first stack
+## 2) Build your first stack
 
 <Steps>
-  <Step title="Check our main/master">
-    Make sure you're on the trunk branch:
-
+  <Step title="Check out trunk">
     ```bash
     mg checkout main
     ```
 
-  </Step>
-  <Step title="Create the first feature branch">
+    Make sure you're on the trunk branch.
 
+  </Step>
+
+  <Step title="Create the first branch">
     ```bash
     mg create feature_1
-    ```
-
-  </Step>
-  <Step title="View your stack">
-
-    ```bash
     mg list
     ```
 
@@ -74,114 +58,63 @@ mg init
 
     ```
     main
-    └─ feature_1
+     └─ feature_1
     ```
 
   </Step>
-  <Step title="Write code & commit">
 
+  <Step title="Write code & commit">
     ```bash
     mg add . && mg commit -m "My commit message"
     ```
 
-    (Or just use normal Git commands—`mg` passes unrecognized subcommands to `git`.)
+    (Or use normal Git commands—unrecognized subcommands pass through to Git.)
 
   </Step>
-  <Step title="Add a second branch">
 
+  <Step title="Add a second branch">
     ```bash
     mg create feature_2
-    ```
-
-  </Step>
-  <Step title="Commit more changes">
-
-    ```bash
     mg add . && mg commit -m "Another commit"
-    ```
-
-  </Step>
-  <Step title="View your stack again">
-
-    ```bash
     mg list
     ```
 
-    It now shows:
+    Now:
 
     ```
     main
-    └─ feature_1
+     └─ feature_1
         └─ feature_2
     ```
 
   </Step>
-  <Step title="Sync if trunk changes">
-    If teammates have pushed code to `main`, run:
 
-    ```bash
-    mg sync
-    ```
-
-    This fetches changes and automatically **re-stacks** your branches on top of the updated trunk. It won't force-pull your local, so you may still do a normal `git pull` if needed.
-
-  </Step>
-  <Step title="Push your stack">
-
+  <Step title="Push your stack to remote">
     ```bash
     mg push
     ```
 
-    By default, this opens an editor prompt where you can tweak the PR title/description.
+    By default, mg opens a text editor to let you tweak each PR's title/description.
 
-    - Tip: `mg push --all` pushes **every** branch in your local stack at once.
-    - If you try `mg push` from a child branch before pushing its parent, mg may fail to create the PR (because the parent PR isn't on remote yet).
+    <Tip>
+    `mg push --all` pushes **every** branch at once.
+
+    If you push a child branch before its parent, mg may fail (the parent PR doesn't exist on remote yet).
+    </Tip>
 
   </Step>
+
   <Step title="Check your PRs">
-
-    ```bash
-    mg list
-    ```
-
-    Now each branch has an associated PR on [mrge.io](https://mrge.io) or GitHub. You can open the UI to see them stacked.
+    Now each branch has an associated PR on [mrge.io](https://mrge.io) or GitHub.
+    Open the UI to see them **stacked**. You've created a basic stacked workflow for your features!
 
   </Step>
 </Steps>
-
-**Done!** That's the typical day-to-day flow for building stacked features.
-
----
-
-## 3) Common Commands
-
-Here are the most essential commands to get you started:
-
-<Note>
-  `mg` only intercepts recognized subcommands. Everything else is passed through
-  to Git, so your normal Git workflow stays intact.
-</Note>
-
-- **`mg create <branch_name>`** - Create a new branch on top of the one you're on
-- **`mg list`** - View your entire stack/tree of branches
-- **`mg checkout <branch>`** - Switch to a different branch
-- **`mg push`** - Push the current branch (PR) to remote
-- **`mg push --all`** - Push the entire stack to remote
-- **`mg sync`** - Sync with remote (rebases and re-stacks if `main` changed)
-- **`mg next`** / **`mg prev`** - Move up or down in the stack
-
-<Tip>
-  For a complete list of commands and detailed usage, check out the [full
-  Command Cheatsheet](/reference/command-cheatsheet).
-</Tip>
 
 ---
 
 ## What's next?
 
-- Learn to **[Create a single Pull Request](/how-to-guides/create-a-pull-request)** if you just need one branch.
-- Dive deeper into **[Creating a Stack](/how-to-guides/create-a-stack)** and advanced usage.
-- Already have a stack? **[Keep It Updated](/how-to-guides/keep-your-stack-updated)** to handle merges or rebase conflicts.
-- Finally, **[Merge your stack](/how-to-guides/merge-your-stack)** in the mrge UI!
-
-Enjoy your new stacked PR workflow!
+- **[Create a single Pull Request](/how-to-guides/create-a-pull-request)** for a simpler, one-branch flow.
+- **[Keep Your Stack Updated](/how-to-guides/keep-your-stack-updated)** if you need to handle merges or rebase conflicts.
+- **[Merge Your Stack](/how-to-guides/merge-your-stack)** in the Mrge UI once your PRs are approved.
