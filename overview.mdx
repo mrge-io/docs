@@ -2,29 +2,32 @@
 title: 'Introduction'
 ---
 
-**mrge** is a developer-focused platform that simplifies **stacked pull requests**. It provides a lightweight CLI, **`mg`**, to help you split your work into smaller, review-friendly branches—without fighting manual rebases or complicated merges.
+**mrge** is a developer-centric platform that helps you manage **stacked pull requests** more efficiently. With our lightweight CLI, **`mg`**, you can split large features into smaller, logically independent branches, making reviews faster and merges less error-prone.
 
 ---
 
-## Why stacked pull requests?
+## Why use stacked PRs?
 
-- **Smaller, easier reviews** – Instead of one massive PR, break features into smaller, dependent branches.
-- **Faster iteration** – You can start the next piece of work immediately, even if earlier PRs aren't merged yet.
-- **Less merge pain** – Each PR focuses on a single change, so merges and conflicts are simpler to handle.
+- **Smaller diffs**: Each branch focuses on one piece of the feature, so your teammates can review it more quickly.
+- **Continuous progress**: Keep building on subsequent branches even if earlier PRs haven't merged yet.
+- **Easier merges**: Conflicts are confined to smaller sets of changes, and `mg` can automatically re-stack child branches if the trunk updates.
 
 ---
 
-## Why mrge?
+## How mrge helps
 
-- **Straightforward commands** – Create and push new branches with ease.
-- **Automatic restacking** – Let `mg` handle rebase cascades when trunk changes.
-- **Visual clarity** – Inspect your entire branch hierarchy with one command.
-- **Git-friendly** – Keep using GitHub or your usual hosting; mrge just layers on top.
+- **Simple commands**: Create, push, and visualize stacked branches with minimal effort.
+- **Works with your GitHub workflow**: Two-way sync ensures you can merge in GitHub or in mrge's UI—whichever you prefer.
+- **CLI pass-through**: Any command `mg` doesn't recognize is forwarded to `git`, so there's no disruption to your existing workflow.
 
 ---
 
 ## Get started
 
-Ready to try it? Jump straight to our [Quickstart](/quickstart) to create your first stacked PR in minutes.
+Ready to give it a try?
 
-Happy stacking!
+1. **[Install the CLI](/installation)**
+2. **[Quickstart](/quickstart)** to create your first stacked PR
+3. Explore our [How-to Guides](/how-to-guides) for more in-depth topics
+
+**Happy stacking!**
