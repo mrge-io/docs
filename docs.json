@@ -3,7 +3,7 @@
   "theme": "mint",
   "name": "mrge Documentation",
   "colors": {
-    "primary": "#FFFFFF"
+    "primary": "#000000"
   },
   "favicon": "/logo/wordmark.svg",
   "navigation": {
@@ -87,7 +87,7 @@
   "integrations": {
     "posthog": {
       "apiKey": "phc_DBTnUOZLA1htEQqXnj10SLMQFu7hs77g17HyS0PwNHK",
-      "apiHost": "https://eu.i.posthog.com"
+      "apiHost": "https://mrge.io/ingest"
     }
   }
 }
