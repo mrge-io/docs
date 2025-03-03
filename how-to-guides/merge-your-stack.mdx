@@ -1,0 +1,56 @@
+---
+title: "Merge your stack"
+description: "Use the mrge UI to merge stacked PRs in the correct order."
+---
+
+Once your stacked PRs are approved, **mrge** offers a clean UI ([mrge.io](https://mrge.io)) for merging them in the right order—no guessing or manual rebasing.
+
+> **Tip**: You can also merge via GitHub, but the mrge UI provides a stacked view to help you see dependencies at a glance.
+
+---
+
+## 1. Open your repository on mrge
+
+1. **Sign in** at [mrge.io](https://mrge.io).
+2. Navigate to your repository.
+3. **Select** the stack you want to merge.
+
+---
+
+## 2. Review branches
+
+- Click on each branch in the UI to see diffs and comments.
+- If needed, go back locally, edit, and push changes. (See [Keep your stack updated](/how-to-guides/keep-your-stack-updated).)
+
+---
+
+## 3. Merge in sequence
+
+1. Click **Merge** on the lowest branch in the stack (the parent).
+2. mrge merges it and re-stacks child branches automatically.
+3. Continue merging up the stack until all branches are done.
+
+> **Partial merges**: If you only want to land the first few branches, that's fine—mrge restacks the remaining branches on top of the newly updated trunk.
+
+---
+
+## 4. Check locally
+
+After merges:
+
+```bash
+mg sync
+```
+
+This ensures your local stack is up-to-date and merges are reflected. Merged branches disappear from `mg list` (unless they still have children that aren't merged yet).
+
+---
+
+## Done!
+
+Your stacked PRs are successfully merged. Time to celebrate—or start another stack!
+
+- **More merging questions?** Head to our [FAQ](/faq-and-troubleshooting).
+- **Got new features?** Rinse and repeat with `mg create`.
+
+**Thanks for using mrge!**

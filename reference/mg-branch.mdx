@@ -1,0 +1,34 @@
+---
+title: "mg branch"
+description: "Shortcut to create and switch to a new branch"
+---
+
+## Name
+
+`mg branch` — Create a new branch on top of the current one and immediately check it out.
+
+## Synopsis
+
+```bash
+mg branch <branch_name>
+```
+
+## Description
+
+- Equivalent to `mg create <branch_name> --checkout`.
+- Automatically moves you to the newly created branch.
+
+## Options / Flags
+
+_(None beyond the basic branch name; uses `mg create` flags under the hood.)_
+
+## Examples
+
+```bash
+mg branch feature/payments
+```
+
+## Notes / Caveats
+
+- For advanced options like draft creation, use `mg create` directly.
+- See also [mg checkout](/reference/mg-checkout) for switching branches.

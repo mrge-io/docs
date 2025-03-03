@@ -1,0 +1,31 @@
+---
+title: "mg adopt"
+description: "Bring an existing branch under mrge's management"
+---
+
+## Name
+
+`mg adopt` — Add a previously untracked Git branch to mrge's stack.
+
+## Synopsis
+
+```bash
+mg adopt <branch_name>
+```
+
+## Description
+
+- If `<branch_name>` was created outside of `mg create`, adopting it integrates it into your stacked workflow.
+- After adoption, it appears in `mg list`.
+
+## Examples
+
+```bash
+# Adopt a local branch named "feature/ui-improvements"
+mg adopt feature/ui-improvements
+```
+
+## Notes / Caveats
+
+- If the parent is unclear, consider [`mg reparent`](/reference/mg-reparent).
+- If the branch was orphaned before, adopting it again is effectively reintroducing it.

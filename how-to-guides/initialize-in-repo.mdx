@@ -1,0 +1,49 @@
+---
+title: "Initialize mrge in a repository"
+description: "Set up mg in your local repo to start using stacked PRs."
+---
+
+Learn how to configure **`mg`** so it knows your trunk branch and can manage stacked PRs.
+
+> **Why initialize?**  
+> `mg init` sets your trunk (often `main`), ensuring mg knows where to base new branches and how to restack them.
+
+---
+
+## Steps
+
+1. **Navigate to Your Repo**
+
+   ```bash
+   cd /path/to/your-project
+   ```
+
+2. **Run `mg init`**
+
+   ```bash
+   mg init
+   ```
+
+   - Prompts you to select `main` or `master` (or another trunk branch).
+   - Creates a `.git/mrge_repo_config` file for storing config.
+
+3. **Confirm It Worked**
+
+   ```bash
+   mg list
+   ```
+
+   - If your repo already has branches, you'll see them listed.
+   - If it's a fresh repo, you'll see only `main`.
+
+> **Authentication**  
+> If mg needs to push to GitHub and can't detect credentials, it may ask you to authenticate via `gh` or a personal access token.
+
+---
+
+## Next steps
+
+- Try the [Quickstart](/quickstart) for a hands-on example of creating and pushing stacked branches.
+- Or see [Create a Pull Request](/how-to-guides/create-a-pull-request) for a single-branch workflow.
+
+That's it! You've initialized **mrge** in your local repository.

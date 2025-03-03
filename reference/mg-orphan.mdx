@@ -1,0 +1,33 @@
+---
+title: "mg orphan"
+description: "Remove a branch from mrge's tracking"
+---
+
+# mg orphan
+
+## Name
+
+`mg orphan` — Remove a branch from mrge's stack management.
+
+## Synopsis
+
+```bash
+mg orphan <branch_name>
+```
+
+## Description
+
+- Disassociates `<branch_name>` from your mrge stack (does not delete the branch from Git).
+- Child branches remain but will still point to the old parent unless reparented or orphaned as well.
+
+## Examples
+
+```bash
+# Orphan the branch "feature_2" from the stack
+mg orphan feature_2
+```
+
+## Notes / Caveats
+
+- This is **irreversible** in mrge's metadata; to bring it back, use [mg adopt](/reference/mg-adopt).
+- Orphaned branches won't appear in `mg list`.

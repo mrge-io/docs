@@ -1,0 +1,33 @@
+---
+title: "mg next"
+description: "Jump to the next branch in the stack"
+---
+
+# mg next
+
+## Name
+
+`mg next` — Switch to the "next" child branch in your current stack.
+
+## Synopsis
+
+```bash
+mg next
+```
+
+## Description
+
+- If you're on `feature_1`, and the next branch is `feature_2`, it checks out `feature_2`.
+- If there is no next branch, it indicates you're at the top of your stack.
+
+## Examples
+
+```bash
+# Move from feature_1 to feature_2
+mg next
+```
+
+## Notes / Caveats
+
+- "Next" is determined by the stacked order in `mg list`.
+- If your branch structure is non-linear or has multiple children, mg prompts you to choose which "next" to move to.

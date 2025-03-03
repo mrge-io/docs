@@ -1,55 +1,81 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "mrge Documentation",
   "colors": {
-    "primary": "#16A34A",
+    "primary": "#0D9373",
     "light": "#07C983",
-    "dark": "#15803D"
+    "dark": "#0A7F63"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Getting started",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Overview",
             "pages": [
-              "introduction",
+              "overview",
               "quickstart",
-              "development"
+              "installation"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Core concepts",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
+              "concepts/overview",
+              "concepts/branching-terminology"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "How-to guides",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "how-to-guides/initialize-in-repo",
+              "how-to-guides/create-a-pull-request",
+              "how-to-guides/create-a-stack",
+              "how-to-guides/keep-your-stack-updated",
+              "how-to-guides/merge-your-stack"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/command-cheatsheet",
+              "reference/mg-init",
+              "reference/mg-create",
+              "reference/mg-list",
+              "reference/mg-branch",
+              "reference/mg-checkout",
+              "reference/mg-push",
+              "reference/mg-sync",
+              "reference/mg-orphan",
+              "reference/mg-help",
+              "reference/mg-commit",
+              "reference/mg-split",
+              "reference/mg-adopt",
+              "reference/mg-reparent",
+              "reference/mg-next",
+              "reference/mg-prev"
+            ]
+          },
+          {
+            "group": "Advanced usage",
+            "pages": [
+              "advanced/advanced-workflows",
+              "advanced/integration-tips"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "config/config-reference"
+            ]
+          },
+          {
+            "group": "Additional resources",
+            "pages": [
+              "faq-and-troubleshooting"
             ]
           }
         ]
@@ -58,19 +84,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "GitHub",
+          "href": "https://github.com/mrge-org/mrge",
+          "icon": "github"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Twitter",
+          "href": "https://twitter.com/mrge_dev",
+          "icon": "twitter"
         }
       ]
     }
@@ -83,20 +104,19 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://github.com/mrge-org/mrge/discussions"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "https://mrge-docs.com/quickstart"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/mrge-org/mrge",
+      "twitter": "https://twitter.com/mrge_dev"
     }
   }
 }

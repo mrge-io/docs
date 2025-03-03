@@ -1,0 +1,97 @@
+---
+title: "Keep your stack updated"
+description: "Sync with trunk, restack branches, and handle conflicts."
+---
+
+When your trunk (`main`/`master`) changes—or you need to revise something mid-stack—**mg** streamlines the process with commands like `mg sync`, `mg modify`, and more.
+
+> **Prerequisites**
+>
+> - [Create a stack](/how-to-guides/create-a-stack)
+> - Familiarity with `mg push` and basic Git conflict resolution
+
+---
+
+## 1. Sync with remote changes
+
+```bash
+mg sync
+```
+
+- **Fetches** new commits from `main`.
+- **Prompts** to delete merged branches.
+- **Restacks** any child branches on top of the updated trunk.
+
+If conflicts appear, follow the on-screen instructions to resolve them and run `mg continue`.
+
+---
+
+## 2. Update mid-stack branches
+
+- Switch to the relevant branch:
+  ```bash
+  mg checkout feature_2
+  ```
+- Make changes and commit them:
+  ```bash
+  mg add .
+  mg commit -m "Address feedback"
+  # or mg modify to amend
+  ```
+- mg automatically re-stacks child branches on top. If you see conflicts, fix them, `mg add .`, then `mg continue`.
+
+---
+
+## 3. Push again
+
+After local changes:
+
+```bash
+mg push
+```
+
+Or push everything at once:
+
+```bash
+mg push --all
+```
+
+Your PRs update on mrge.io / GitHub accordingly.
+
+---
+
+## 4. Orphan / adopt branches
+
+- **Orphan**: remove a branch from the stack but keep it in Git:
+  ```bash
+  mg orphan <branch>
+  ```
+- **Adopt**: bring an existing Git branch into mg's stack:
+  ```bash
+  mg adopt <branch>
+  ```
+
+---
+
+## 5. Splitting or folding commits
+
+- **Split**: breaks large commits into smaller ones:
+  ```bash
+  mg split
+  ```
+- **Fold** / squash: if you want to combine commits, see:
+  ```bash
+  mg split --fold
+  ```
+  (Depending on your version of mg.)
+
+---
+
+## Done!
+
+Your stack is in sync with trunk. Each branch can be pushed or merged independently.
+
+- **Ready to merge?** See [Merge your stack](/how-to-guides/merge-your-stack).
+- **Troubleshooting?** Check our [FAQ](/faq-and-troubleshooting).
+
+**Happy syncing!**

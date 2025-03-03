@@ -1,0 +1,73 @@
+---
+title: "Integration Tips"
+description: "Using mrge with CI/CD, GitHub Actions, and more"
+---
+
+# Integration Tips
+
+mrge plays nicely with various CI systems and developer workflows. Below are some common patterns to help you streamline development.
+
+## CI/CD with GitHub Actions
+
+Consider a simple `.github/workflows/ci.yml`:
+
+```yaml
+name: CI
+
+on:
+  push:
+    branches: [main, "**"] # Adjust as needed for your trunk or feature branches
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Tests
+        run: npm test
+```
+
+- **Tip**: Add a step for `mg sync` if your workflow automates branch restacking on push.
+- **Draft PRs**: If using `mg push --draft`, your PR stays in draft until you mark it ready.
+
+## Pre-commit Hooks
+
+- **Purpose**: Automatically run linting, tests, or type checks before allowing commits.
+- **Setup**: In `.git/hooks/pre-commit`, you can invoke `mg commit` or simply rely on standard Git hooks.
+- **Example**:
+  ```bash
+  #!/bin/sh
+  npm run lint
+  if [ $? -ne 0 ]; then
+    echo "Lint failed. Aborting commit."
+    exit 1
+  fi
+  ```
+  This helps keep your branches clean before they get stacked.
+
+## Environment Variables & Custom Flags
+
+- **`MRGE_TOKEN`**: Provide a GitHub personal access token if you're not using GitHub CLI.
+- **`MRGE_BRANCH_NAMING`**: Use this to enforce a naming convention (e.g., `feature/XYZ-<description>`).
+- **`--merge` or `--rebase-only`**: For CI pipelines that prefer merges over rebases, configure your `.mrgeconfig` or pass flags to scripts.
+
+## Scripts & Automation
+
+- Some teams wrap `mg` commands in their own scripts to standardize usage:
+  ```bash
+  #!/bin/bash
+  # sync_all.sh
+  mg sync --all
+  mg push --all
+  ```
+- This ensures everyone follows the same push-and-sync procedures in your CI pipeline.
+
+---
+
+### Next steps
+
+- **[Advanced Workflows](/advanced/advanced-workflows)**: Combine partial merges, handle rollbacks, or scale to monorepos.
+- **[Config Reference](/config/config-reference)**: Explore more environment variables and `.mrgeconfig` options.
+- **[Multiple Trunk Branches](/how-to-guides/multiple-trunk-branches)**: If your CI needs to handle parallel trunks (e.g., `main` and `develop`).

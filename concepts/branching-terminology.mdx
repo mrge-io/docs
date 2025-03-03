@@ -1,0 +1,62 @@
+---
+title: "Branching terminology"
+description: "Key Git and mrge terms for stacked development"
+---
+
+When working with **stacked pull requests**, you'll encounter specific terms and concepts—both from Git and from mrge. Use this page as a quick reference for branch-related jargon.
+
+<Info>
+  Understanding these terms will help you navigate the stacked workflow more
+  effectively and communicate better with your team.
+</Info>
+
+## Parent branch
+
+A **parent branch** is the branch that your current branch is based on.
+
+- In a stacked workflow, `feature_2` might have `feature_1` as its parent.
+- Once `feature_1` merges, `feature_2` typically rebases onto the updated `main` (if needed).
+
+## Child branch
+
+A **child branch** is a branch whose parent is another active branch in the stack.
+
+- For example, if `feature_2` depends on commits in `feature_1`, then `feature_2` is considered a child of `feature_1`.
+- You can see these relationships by running [`mg list`](/reference/mg-list)
+
+## Orphan branch
+
+In mrge, an **orphan branch** is any branch that has been removed from the tracked stack. This can happen if you decide a branch is no longer relevant.
+
+<Warning>
+  When you orphan a branch, its children (if any) will need a new parent or
+  might also become orphaned.
+</Warning>
+
+- You can orphan a branch with [`mg orphan`](/reference/mg-orphan).
+- Once orphaned, its children (if any) will need a new parent or might also be orphaned.
+
+## Sync
+
+**Sync** refers to the process of updating your local branch (and its children) with the latest changes from the remote parent branch (often `main`).
+
+<Tip>
+  Regular syncing helps prevent merge conflicts from becoming too complex and
+  keeps your branches current with the main codebase.
+</Tip>
+
+- Typically done via [`mg sync`](/reference/mg-sync).
+- Sync can rebase or merge your branches, ensuring they stay current with teammates' commits.
+
+## Upstream & downstream
+
+These are general Git terms:
+
+- **Upstream**: The remote branch or parent branch that your local branch tracks. In mrge's stacked model, `main` might be upstream for the root of your stack.
+- **Downstream**: Branches that rely on your current branch or follow it in the commit chain. Child branches are downstream from their parent.
+
+## Where to see these concepts in action
+
+- **[Create a stacked PR](/how-to-guides/create-stacked-prs)**: Demonstrates parent-child relationships when stacking multiple features.
+- **[Handle updates & sync](/how-to-guides/handle-updates-sync)**: Learn how to keep branches in sync with the latest changes in `main`.
+- **[Adopt or orphan a branch](/how-to-guides/adopt-or-orphan-branch)**: Manage how branches enter or leave mrge's tracking system.

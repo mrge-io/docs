@@ -1,0 +1,114 @@
+---
+title: "Full installation guide"
+---
+
+The **`mg` CLI** lets you interact with [mrge.io](https://mrge.io) to manage stacked pull requests. Install it on your preferred OS with the steps below.
+
+<Note>
+  **Prerequisites** - **Git** (v2.20+) - A **GitHub** account (optionally the
+  GitHub CLI `gh` for authentication) - (Optional) [Homebrew](https://brew.sh)
+  or other package managers
+</Note>
+
+
+## Installation by Platform
+
+<AccordionGroup>
+  <Accordion title="macOS" id="macos">
+    Install both `gh` (optional but recommended) and `mg` via Homebrew:
+
+    ```bash
+    brew install gh mrge-io/tap/mg
+    ```
+
+    Verify:
+
+    ```bash
+    mg --version
+    ```
+
+  </Accordion>
+
+  <Accordion title="Arch Linux" id="arch-linux">
+    Using [yay](https://github.com/Jguer/yay):
+
+    ```bash
+    yay mg-cli
+    ```
+
+    Then check:
+
+    ```bash
+    mg --version
+    ```
+
+  </Accordion>
+
+  <Accordion title="Debian/Ubuntu" id="debianubuntu">
+    <Steps>
+      <Step title="Add our APT repo">
+        ```bash
+        echo "deb [trusted=yes] https://apt.fury.io/mrge/ /" | sudo tee /etc/apt/sources.list.d/mrge.list
+        sudo apt update
+        ```
+      </Step>
+      <Step title="Install the mg package">
+        ```bash
+        sudo apt install mg
+        ```
+        
+        Alternatively, download the `.deb` package manually:
+        ```bash
+        sudo apt install ./mg_<VERSION>_linux_<ARCH>.deb
+        ```
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="RHEL/CentOS" id="rhelcentos">
+    <Steps>
+      <Step title="Add our YUM repo">
+        ```bash
+        cat << EOF | sudo tee /etc/yum.repos.d/mrge.repo
+        [fury]
+        name=mrge repository
+        baseurl=https://yum.fury.io/mrge/
+        enabled=1
+        gpgcheck=0
+        EOF
+        ```
+      </Step>
+      <Step title="Install the package">
+        ```bash
+        sudo yum install mg
+        ```
+        
+        Or manually install the `.rpm`:
+        ```bash
+        sudo rpm -i ./mg_<VERSION>_linux_<ARCH>.rpm
+        ```
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Windows" id="windows">
+    We do not yet offer **official Windows binaries** for the mg CLI. If you'd like to see Windows support—or want to help test a pre-release version—please contact us at **[contact@mrge.io](mailto:contact@mrge.io)**.
+
+    <Tip>
+      **Alternative**: Some users run mg under **Windows Subsystem for Linux
+      (WSL)**. If you're comfortable with WSL, you can follow the Debian/Ubuntu
+      instructions above within your WSL environment.
+    </Tip>
+
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Next Steps
+
+- **Installation complete?** Head to our [Quickstart](/quickstart) for a hands-on workflow demo.
+- Need GitHub authentication or trunk config? See [Initialize mrge](/how-to-guides/initialize-in-repo).
+- Check the [FAQ](/faq-and-troubleshooting) if you run into issues.
+
+**Congratulations!** You can now run `mg` commands on your system.

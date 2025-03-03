@@ -1,0 +1,45 @@
+---
+title: "mg init"
+description: "Initialize a repository to use mrge"
+---
+
+# mg init
+
+## Name
+
+`mg init` — Initialize the current repository for mrge, setting up necessary metadata.
+
+## Synopsis
+
+```bash
+mg init [--force] [--remote <remote-name>]
+```
+
+## Description
+
+- Creates a `.mrge` folder in your repo to store CLI metadata.
+- Checks if your repo is already configured; if so, it will prompt to overwrite or skip.
+- Optionally sets the default remote (e.g., `origin`, `upstream`).
+
+## Options / Flags
+
+- **`--force`**: Overwrite existing mrge configuration, if any.
+- **`--remote <remote-name>`**: Specify which remote to track by default (defaults to `origin`).
+
+## Examples
+
+```bash
+# Basic initialization:
+mg init
+
+# Force re-initialize an already configured repo:
+mg init --force
+
+# Use a non-default remote:
+mg init --remote upstream
+```
+
+## Notes / Caveats
+
+- Requires an active `.git` directory; run `git init` first if your repo is fresh.
+- If you are using GitHub CLI authentication, ensure `gh auth login` is completed.

@@ -1,0 +1,56 @@
+---
+title: "Stacked PRs"
+description: "Core concepts for trunk-based development and stacking"
+---
+
+mrge is built on the principle that **small, incremental changes** are easier to review, test, and merge than massive commits. In a world where **AI tools** can generate large amounts of code quickly, keeping changes small and well-organized is **even more critical** for human reviewers. By stacking pull requests, you can develop feature after feature without merging each one back into `main` first, while ensuring every increment is clear, reviewable, and testable.
+
+## What are stacked PRs?
+
+A "stacked PR" is simply a pull request that is **based on another in-progress pull request**, instead of being branched off your main code branch. Conceptually, imagine each branch in your workflow as a short step on top of the previous one:
+
+```
+main
+└── feature_1
+    └── feature_2
+        └── feature_3
+```
+
+Each feature branch builds on the work of the previous one. This makes it easier to:
+
+- **Keep pull requests small**: Each PR includes only the delta from its parent.
+- **Allow early feedback**: Teammates can review `feature_2` independently of `feature_1`.
+- **Reduce merge conflicts**: Once `feature_1` merges, `feature_2` simply rebases onto the new main.
+
+## Why stacked PRs?
+
+By splitting your changes into multiple PRs, reviewers can provide faster, more targeted feedback:
+
+1. **Shorter review cycles**: Instead of wading through 2k lines of code, teammates can review logical chunks.
+2. **Easier backtracking**: If `feature_2` isn't ready, you can still move forward with `feature_1`.
+3. **Iterate rapidly**: No waiting for merges to start the next piece of work.
+
+This approach fosters a trunk-based development workflow:
+
+- `main` stays stable.
+- Short-lived branches build off `main` (or their parent branch).
+- Each stacked PR merges back to `main` once approved.
+
+## How mrge fits in
+
+mrge automates much of the busywork typically associated with stacked branches. Instead of manually rebasing, renaming branches, or struggling with merges, you can:
+
+- **Create branches instantly** with `mg create <branch_name>`.
+- **Visualize your stack** via `mg list`.
+- **Sync** with remote changes in `main` using `mg sync`.
+- **Re-parent** or rename if you need to reshape your branch relationships.
+
+Ultimately, mrge helps teams move faster by **removing friction** from your Git workflow and letting you focus on building features, not wrangling merges.
+
+---
+
+Continue exploring:
+
+- **[Quickstart](/quickstart)**: Try your first stacked PR.
+- **[How-to guides](/how-to-guides/create-stacked-prs)**: Learn step-by-step best practices.
+- **[Command reference](/reference/mg-init)**: Dive deep into each mrge command.

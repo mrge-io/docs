@@ -1,0 +1,90 @@
+---
+title: "Create a stack"
+description: "Build multiple PRs on top of each other with mg."
+---
+
+# Create a stack
+
+Stacks allow you to break a big feature into multiple dependent branches, each with its own PR. Reviewers can check small diffs instead of one massive change.
+
+> **Prerequisites**
+>
+> - Repo initialized with `mg init`
+> - Familiarity with basic mg commands (`mg create`, `mg push`, etc.)
+
+---
+
+## 1. Start from your trunk
+
+```bash
+mg checkout main
+```
+
+or:
+
+```bash
+mg checkout master
+```
+
+---
+
+## 2. First branch
+
+```bash
+echo "console.log('Part A')" > partA.js
+mg add partA.js
+mg create -m "feat: part A"
+```
+
+Push if you want to open a PR right away:
+
+```bash
+mg push
+```
+
+---
+
+## 3. Second branch on top
+
+```bash
+echo "console.log('Part B')" > partB.js
+mg add partB.js
+mg create -m "feat: part B"
+```
+
+Now `mg list` might show:
+
+```
+main
+ └─ feat_part_A
+    └─ feat_part_B
+```
+
+---
+
+## 4. Push & review each PR
+
+```bash
+mg push --all
+```
+
+This creates/updates two PRs on mrge.io (and GitHub). Each branch is smaller, but collectively they form one bigger feature.
+
+---
+
+## 5. Keep navigating
+
+- **Move up**: `mg next`
+- **Move down**: `mg prev`
+- **Re-check** the tree: `mg list`
+
+You can keep stacking as many branches as you need.
+
+---
+
+### Next steps
+
+- **Sync** changes from `main` or fix mid-stack branches with [Keep your stack updated](/how-to-guides/keep-your-stack-updated).
+- **Merge** your entire stack in the [mrge UI](/how-to-guides/merge-your-stack) once everything's approved.
+
+That's it! You've built a multi-branch, multi-PR stack that's simpler for your team to review.

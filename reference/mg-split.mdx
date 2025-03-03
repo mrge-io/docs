@@ -1,0 +1,40 @@
+---
+title: "mg split"
+description: "Interactive commit splitting or folding"
+---
+
+# mg split
+
+## Name
+
+`mg split` — Rewrite Git history by splitting or folding commits.
+
+## Synopsis
+
+```bash
+mg split <commit_sha> [--fold]
+```
+
+## Description
+
+- Opens an interactive interface to let you choose how to break large commits into smaller ones.
+- With `--fold`, merges multiple commits into one.
+
+## Options / Flags
+
+- **`--fold`**: Instead of splitting, fold consecutive commits into a single commit.
+
+## Examples
+
+```bash
+# Split a large commit
+mg split abc123
+
+# Fold commits interactively
+mg split abc123 --fold
+```
+
+## Notes / Caveats
+
+- Rewrites history; child branches may need to rebase if they depend on the modified commits.
+- Use caution with previously pushed commits, as force pushes might be required.

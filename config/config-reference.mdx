@@ -1,0 +1,76 @@
+---
+title: "Config Reference"
+description: "Customize mrge with config files and environment variables"
+---
+
+# Config Reference
+
+mrge offers a range of settings you can adjust in a `.mrgeconfig` file or via environment variables to fit your team's workflow.
+
+## Location of .mrgeconfig
+
+- By default, mrge looks for `.mrgeconfig` in the root of your Git repo.
+- You can specify a custom location by setting `MRGE_CONFIG_PATH`.
+
+## Sample .mrgeconfig
+
+```yaml
+# Example .mrgeconfig
+
+# Trunk or mainline
+trunk: "develop"
+
+# Default remote
+remote: "origin"
+
+# Authentication
+# if not using GitHub CLI, specify a PAT
+# token: "ghp_abc123..."
+
+# Branch naming rules
+branchNaming:
+  pattern: "feature/{ticketId}-{description}"
+  autoGenerate: true
+
+# Force rebase or merge
+syncStrategy: "rebase" # valid options: rebase, merge
+```
+
+## Common Fields
+
+- **`trunk`**: The default base branch (e.g., `main`, `develop`).
+- **`remote`**: Git remote name (e.g., `origin`).
+- **`token`**: Personal Access Token if you don't use GitHub CLI for auth.
+- **`branchNaming`**: Object to define naming conventions.
+  - `pattern`: A templated format for new branches.
+  - `autoGenerate`: If `true`, `mg commit -b` auto-generates branch names.
+- **`syncStrategy`**: Choose `rebase` or `merge` for `mg sync`.
+
+## Environment Variables
+
+- **`MRGE_CONFIG_PATH`**: Override the default location of `.mrgeconfig`.
+- **`MRGE_TOKEN`**: Provide a GitHub PAT at runtime.
+- **`MRGE_DEBUG`**: Enable debug logs for troubleshooting (`true` or `1`).
+
+## Ignoring Branches
+
+If you'd like mrge to skip certain branches (e.g., auto-generated CI branches):
+
+```yaml
+ignoreBranches:
+  - "ci/*"
+  - "dependabot/*"
+```
+
+## Toggling Advanced Features
+
+- **Draft PRs**: If your Git provider supports them, set `enableDrafts: true`.
+- **Custom PR Templates**: Specify a path to a `.md` file for the default PR body.
+
+---
+
+### Additional Reading
+
+- **[Multiple Trunk Branches](/how-to-guides/multiple-trunk-branches)**: Adjust your trunk config for parallel releases.
+- **[Integration Tips](/advanced/integration-tips)**: CI environment variables or script-based mg usage.
+- **[FAQ & Troubleshooting](/faq-and-troubleshooting)**: See solutions for common config-related errors.

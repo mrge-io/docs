@@ -1,0 +1,47 @@
+---
+title: "mg push"
+description: "Push local changes and open a PR on GitHub"
+---
+
+# mg push
+
+## Name
+
+`mg push` — Push your branch to remote and (optionally) open or update a pull request.
+
+## Synopsis
+
+```bash
+mg push [--all] [--draft] [--title <title>] [--body <body>]
+```
+
+## Description
+
+- By default, pushes only the current branch.
+- If no PR exists, it creates one; if a PR does exist, it updates it.
+- `--all` attempts to push the entire stack from the root branch up.
+
+## Options / Flags
+
+- **`--all`**: Push every branch from the bottom of the stack to the top.
+- **`--draft`**: Create or update the PR as a draft.
+- **`--title <title>`**: Manually set the PR title.
+- **`--body <body>`**: Manually set the PR description.
+
+## Examples
+
+```bash
+# Push just the current branch
+mg push
+
+# Push all stacked branches at once
+mg push --all
+
+# Provide custom title and description
+mg push --title "Awesome Feature" --body "This adds an awesome feature!"
+```
+
+## Notes / Caveats
+
+- If you have multiple branches that haven't been pushed yet, you may need `--all`.
+- You can still edit PR titles and descriptions on GitHub after pushing.

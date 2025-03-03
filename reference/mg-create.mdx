@@ -1,0 +1,41 @@
+---
+title: "mg create"
+description: "Create a new stacked branch"
+---
+
+# mg create
+
+## Name
+
+`mg create` — Make a new branch on top of the current branch.
+
+## Synopsis
+
+```bash
+mg create <branch_name> [--checkout] [--draft]
+```
+
+## Description
+
+- Creates a new branch that is tracked within mrge's stack. By default, it does **not** switch to the new branch unless you use `--checkout`.
+- The new branch is considered a child of your current branch.
+
+## Options / Flags
+
+- **`--checkout`**: Automatically switch to the new branch after creating it.
+- **`--draft`**: Mark the branch/PR as a draft when pushing to GitHub (requires an integration that supports draft PRs).
+
+## Examples
+
+```bash
+# Create a child branch but stay on the current branch
+mg create feature/login
+
+# Create and immediately checkout
+mg create feature/ui --checkout
+```
+
+## Notes / Caveats
+
+- If you forget to name a branch, mrge will prompt for one interactively (unless you have auto-generation turned on in `.mrgeconfig`).
+- For multi-branch flows, see [Create Stacked PRs](/how-to-guides/create-stacked-prs).

@@ -1,0 +1,106 @@
+---
+title: "Create a pull request"
+description: "Use mg to create a single PR, just like in Git/GitHub."
+---
+
+# Create a pull request
+
+If you're only opening **one** pull request—no complex stacking—**you can keep using normal Git commands** exactly as before (e.g., `git checkout -b my-feature`, `git commit -m "message"`, `git push`). Using **mg** is entirely optional for a single PR workflow—but it can still help you **save time** with commands like `mg create` and `mg push`.
+
+> **Prerequisites**
+>
+> - [Install mg](/installation) (optional for single PRs, but useful if you want to try mg's features)
+> - [Initialize your repo](/how-to-guides/initialize-in-repo) if you plan on using mg for pushing to mrge/GitHub
+
+---
+
+## 1. Make your changes (Option A: Use mg)
+
+If you want to see how mg can simplify a typical Git flow, you can do:
+
+```bash
+# Create + commit in one command:
+echo "console.log('Single PR')" > single.js
+mg add single.js
+mg create -m "feat: add single PR example"
+```
+
+This automatically creates a new branch and commits changes under that branch.
+
+### Or (Option B: Keep using Git)
+
+```bash
+git checkout -b single-pr-example
+echo "console.log('Single PR')" > single.js
+git add single.js
+git commit -m "feat: add single PR example"
+```
+
+Both approaches are valid. In either case, your new branch is ready for a pull request.
+
+---
+
+## 2. Push to open a PR
+
+- **If using mg**:
+
+  ```bash
+  mg push
+  ```
+
+  mg might open your editor (vim, nano, etc.) so you can edit the PR title/description. It then prints a link to the PR on mrge.io or GitHub.
+
+- **If using Git**:
+  ```bash
+  git push -u origin single-pr-example
+  ```
+  Then open GitHub or [mrge.io](https://mrge.io) in your browser to create the PR manually.
+
+Either way, you end up with a single PR on GitHub or mrge.
+
+---
+
+## 3. Respond to reviews
+
+If your teammates review the PR and request changes:
+
+1. Check out your feature branch if needed (using Git or mg):
+   ```bash
+   mg checkout single-pr-example
+   ```
+   or
+   ```bash
+   git checkout single-pr-example
+   ```
+2. Make changes, commit them (Git or mg):
+   ```bash
+   git commit -am "Fix: addressed feedback"
+   ```
+   or
+   ```bash
+   mg add .
+   mg commit -m "Fix: addressed feedback"
+   ```
+3. **Push** again:
+   ```bash
+   mg push
+   ```
+   or
+   ```bash
+   git push
+   ```
+   The existing PR automatically updates.
+
+---
+
+## 4. Merge
+
+You can merge your single-PR branch through **GitHub**'s UI or the **[mrge UI](/how-to-guides/merge-your-stack)** (mrge can show just one PR, even if it's not a stack). Either way, once it's approved and merged, you're done!
+
+---
+
+## That's it!
+
+For a single pull request, your workflow doesn't really change—you can continue using Git exactly as before. **mg** is there if you'd like to streamline creating branches and pushing PRs, but it's optional for one-branch flows.
+
+> **Want to see mg's real power?** Check out [Create a Stack](/how-to-guides/create-a-stack) to learn about stacking multiple branches for cleaner, smaller PRs.

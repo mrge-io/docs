@@ -1,0 +1,69 @@
+---
+title: "Command Cheatsheet"
+description: "Quick reference for all mg commands"
+---
+
+This cheatsheet provides a concise reference for all mg commands. For detailed information on each command, click the command name to view its dedicated documentation page.
+
+<Note>
+  `mg` only intercepts recognized subcommands. Everything else is passed through
+  to Git, so your normal Git workflow stays intact.
+</Note>
+
+| Command                                                   | Description                                                                            |
+| --------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [`mg init`](/reference/mg-init)                           | Initialize mg in your repository and identify your trunk branch.                       |
+| [`mg create <branch_name>`](/reference/mg-create)         | Create a new branch on top of the one you're on.                                       |
+| [`mg branch <branch_name>`](/reference/mg-branch)         | Create a new branch on top of the one you're on (same as `create`).                    |
+| [`mg list`](/reference/mg-list) (/reference/mg-list)      | View your entire stack/tree of branches.                                               |
+| [`mg checkout <branch>`](/reference/mg-checkout)          | Switch to a different branch.                                                          |
+| [`mg push`](/reference/mg-push)                           | Push the **current** branch (PR) to remote.                                            |
+| [`mg push --all`](/reference/mg-push)                     | Push the **entire** stack to remote.                                                   |
+| [`mg sync`](/reference/mg-sync)                           | Sync with remote (rebases and re-stacks if `main` changed).                            |
+| [`mg orphan`](/reference/mg-orphan)                       | Remove the current branch from mg's tree tracking (no deletion in Git).                |
+| [`mg commit -b`](/reference/mg-commit)                    | Commit **and** auto-generate a new branch name (`--branch-name <name>` if you prefer). |
+| [`mg split`](/reference/mg-split)                         | Interactive rebase / split a larger commit.                                            |
+| [`mg adopt <branch>`](/reference/mg-adopt)                | Bring an existing Git branch under mg's stack tracking.                                |
+| [`mg reparent --parent <branch>`](/reference/mg-reparent) | Change the current branch's parent.                                                    |
+| [`mg next`](/reference/mg-next)                           | Move to the child branch in your stack.                                                |
+| [`mg prev`](/reference/mg-prev)                           | Move to the parent branch in your stack.                                               |
+| [`mg help`](/reference/mg-help)                           | See all available mg commands.                                                         |
+
+<Warning>
+  **If a PR is merged upstream**, `mg sync` automatically re-stacks child
+  branches to the new parent. This doesn't directly pull from `main`—so if you
+  want local changes from the remote trunk, run `mg sync` or do a `git pull`.
+</Warning>
+
+## Common Workflows
+
+### Creating a stack
+
+```bash
+mg create feature_1
+# Make changes
+mg add . && mg commit -m "Feature 1 changes"
+mg create feature_2
+# Make more changes
+mg add . && mg commit -m "Feature 2 changes"
+mg push --all
+```
+
+### Keeping a stack updated
+
+```bash
+# When main has changed
+mg sync
+```
+
+### Moving between branches in a stack
+
+```bash
+# Move to parent branch
+mg prev
+
+# Move to child branch
+mg next
+```
+
+For more detailed information about each command, refer to the individual command pages in the reference section.

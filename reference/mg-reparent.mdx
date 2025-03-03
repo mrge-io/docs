@@ -1,0 +1,40 @@
+---
+title: "mg reparent"
+description: "Change a branch's parent"
+---
+
+# mg reparent
+
+## Name
+
+`mg reparent` — Reassign the parent of a branch in the stacked hierarchy.
+
+## Synopsis
+
+```bash
+mg reparent --parent <parent_branch> [<branch_name>]
+```
+
+## Description
+
+- If `<branch_name>` is omitted, the current branch's parent is changed.
+- Useful when a branch was based off the wrong trunk or feature.
+
+## Options / Flags
+
+- **`--parent <parent_branch>`**: The new parent branch.
+
+## Examples
+
+```bash
+# Reparent your current branch to 'feature_1'
+mg reparent --parent feature_1
+
+# Reparent 'hotfix' to 'main'
+mg reparent --parent main hotfix
+```
+
+## Notes / Caveats
+
+- Re-stacking might involve rebasing. If conflicts occur, you'll need to resolve them manually.
+- Use carefully if your branch was already pushed and is under active review.

@@ -1,0 +1,32 @@
+---
+title: "mg checkout"
+description: "Switch to another branch tracked by mrge"
+---
+
+# mg checkout
+
+## Name
+
+`mg checkout` — Switch your working directory to a different branch in the stack.
+
+## Synopsis
+
+```bash
+mg checkout <branch_name>
+```
+
+## Description
+
+- Changes your current working branch to `<branch_name>`.
+- If `<branch_name>` isn't tracked by mrge, it will prompt you to adopt it or use normal git.
+
+## Examples
+
+```bash
+mg checkout feature_2
+```
+
+## Notes / Caveats
+
+- This is a thin wrapper around `git checkout` but ensures mrge tracking remains consistent.
+- If you see a "branch not tracked" error, consider [mg adopt](/reference/mg-adopt).
