@@ -1,20 +1,27 @@
 ---
-title: 'Create a stack'
-description: 'Build multiple pull requests on top of each other with mg.'
+title: "Create a stack"
+description: "Build multiple pull requests on top of each other with mg."
 ---
+
+## Interactive Demo
+
+Learn about stacked PRs interactively in your CLI:
+
+```
+mg demo
+```
 
 Stacks allow you to break a big feature into multiple dependent branches, each with its own PR. This approach makes it easier to review smaller, self-contained changes instead of dealing with one massive pull request.
 
 <Note>
+  **Prerequisites**
 
-**Prerequisites**
+  * A repo already [initialized with `mg init`](/how-to-guides/initialize-in-repo).
 
-- A repo already [initialized with `mg init`](/how-to-guides/initialize-in-repo).
-- Basic familiarity with key mg commands like `mg create` and `mg push`.
-
+  * Basic familiarity with key mg commands like `mg create` and `mg push`.
 </Note>
 
----
+***
 
 ## 1. Start from your trunk
 
@@ -24,7 +31,7 @@ Begin by checking out your trunk branch (often `main` or `master`):
 mg checkout main
 ```
 
----
+***
 
 ## 2. First branch
 
@@ -47,7 +54,7 @@ mg push
   needed.
 </Tip>
 
----
+***
 
 ## 3. Second branch on top
 
@@ -75,7 +82,7 @@ main
 
 Each of these branches can become its own PR.
 
----
+***
 
 ## 4. Push & review your branches
 
@@ -87,33 +94,38 @@ This command updates (or creates) your pull requests on Mrge (and GitHub). Each 
 
 <Tip>
   If you prefer pushing branches one at a time, that's fine, too. Just call `mg
-  push` while on each branch.
+      push` while on each branch.
 </Tip>
 
----
+***
 
 ## 5. Keep moving
 
-- **Check out the next branch in the stack**: `mg next`
-- **Check out the previous branch in the stack**: `mg prev`
-- **Visualize again**: `mg list`
+* **Check out the next branch in the stack**: `mg next`
+
+* **Check out the previous branch in the stack**: `mg prev`
+
+* **Visualize again**: `mg list`
 
 Add as many branches as you need for each logical slice of your feature.
 
----
+***
 
 ### Best Practices
 
-- **One logical change per branch**: Keep each branch focused on a single feature or sub-feature.
-- **Name branches descriptively**: It's easier to see what each PR does when reading the branch list.
-- **Push frequently**: Ensures your teammates can see your ongoing work and provide feedback early.
+* **One logical change per branch**: Keep each branch focused on a single feature or sub-feature.
 
----
+* **Name branches descriptively**: It's easier to see what each PR does when reading the branch list.
+
+* **Push frequently**: Ensures your teammates can see your ongoing work and provide feedback early.
+
+***
 
 ### Next steps
 
-- **[Keep your stack updated](/how-to-guides/keep-your-stack-updated)**: Sync from `main` if teammates add new commits.
-- **[Merge your stack in Mrge](/how-to-guides/merge-your-stack)**: Once each PR is ready, merge them in the right order via the Mrge UI.
+* [Keep your stack updated](/how-to-guides/keep-your-stack-updated): Sync from `main` if teammates add new commits.
+
+* [Merge your stack in Mrge](/how-to-guides/merge-your-stack): Once each PR is ready, merge them in the right order via the Mrge UI.
 
 <Check>
   That's it! You've built a multi-branch, multi-PR stack that's simpler for your
