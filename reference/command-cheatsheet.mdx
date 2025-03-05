@@ -13,8 +13,7 @@ This cheatsheet provides a concise reference for most mg commands. For detailed 
 | Command                                                   | Description                                                                            |
 | --------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [`mg init`](/reference/mg-init)                           | Initialize mg in your repository and identify your trunk branch.                       |
-| [`mg create <branch_name>`](/reference/mg-create)         | Create a new branch on top of the one you're on.                                       |
-| [`mg branch <branch_name>`](/reference/mg-branch)         | Create a new branch on top of the one you're on (same as `create`).                    |
+| [`mg branch <branch_name>`](/reference/mg-branch)         | Create a new branch on top of the one you're on.                    |
 | [`mg list`](/reference/mg-list)                           | View your entire stack/tree of branches.                                               |
 | [`mg checkout <branch>`](/reference/mg-checkout)          | Switch to a different branch.                                                          |
 | [`mg push`](/reference/mg-push)                           | Push the **current** branch (PR) to remote.                                            |
@@ -40,10 +39,10 @@ This cheatsheet provides a concise reference for most mg commands. For detailed 
 ### Creating a stack
 
 ```bash
-mg create feature_1
+mg branch feature_1
 # Make changes
 mg add . && mg commit -m "Feature 1 changes"
-mg create feature_2
+mg branch feature_2
 # Make more changes
 mg add . && mg commit -m "Feature 2 changes"
 mg push --all
