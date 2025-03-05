@@ -10,12 +10,13 @@ description: "Bring an existing branch under mrge's management"
 ## Synopsis
 
 ```bash
-mg adopt <branch_name>
+mg adopt
 ```
 
 ## Description
 
-- If `<branch_name>` was created outside of `mg create`, adopting it integrates it into your stacked workflow.
+- If `<branch_name>` was created outside of `mg branch`, adopting it integrates it into your stacked workflow.
+- This will open an interactive view of all of your branches that are not tracked in mg, and you can use 'space' to select branches to adopt, and enter to apply.
 - After adoption, it appears in `mg list`.
 
 ## Examples
