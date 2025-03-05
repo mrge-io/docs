@@ -15,13 +15,15 @@ mg commit -m <message> [--branch-name <name> | -b]
 
 ## Description
 
-- A pass-through to `git commit -m <message>` but integrates mrge-specific features for branch naming.
-- If you specify `-b` without a name, mrge will automatically generate a branch name based on your commit message or config rules.
+* A pass-through to `git commit -m <message>` but integrates mrge-specific features for branch naming.
+
+* If you specify `-b` without a name, mrge will automatically generate a branch name based on your commit message or config rules.
 
 ## Options / Flags
 
-- **`-m <message>`**: Commit message.
-- **`-b, --branch-name <name>`**: Automatically create and/or switch to a new branch named `<name>` as part of the commit.
+* **`-m <message>`**: Commit message.
+
+* **`-b, --branch-name <name>`**: Automatically create and/or switch to a new branch named `<name>` as part of the commit.
 
 ## Examples
 
@@ -34,6 +36,7 @@ mg commit -m "Add UI tests" -b
 ```
 
 <Note>
-  - This feature is optional; standard Git usage is still valid.
-  - If using `-b`, ensure your `.mrgeconfig` sets rules for auto-generated names (if desired).
+  * This feature is optional; standard Git usage is still valid.
+
+  * If using `-b`, ensure your `.mrgeconfig` sets rules for auto-generated names (if desired).
 </Note>
