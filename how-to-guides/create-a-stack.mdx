@@ -18,7 +18,7 @@ Stacks allow you to break a big feature into multiple dependent branches, each w
 
   * A repo already [initialized with `mg init`](/how-to-guides/initialize-in-repo).
 
-  * Basic familiarity with key mg commands like `mg create` and `mg push`.
+  * Basic familiarity with key mg commands like `mg branch` and `mg push`.
 </Note>
 
 ***
@@ -38,9 +38,10 @@ mg checkout main
 Make your first set of changes:
 
 ```bash
+mg branch part_a
 echo "console.log('Part A')" > partA.js
 mg add partA.js
-mg create -m "feat: part A"
+mg commit -m "feat: part A"
 ```
 
 You can open a pull request immediately by pushing:
@@ -61,9 +62,10 @@ mg push
 Let's build on that first branch:
 
 ```bash
+mg branch part_b
 echo "console.log('Part B')" > partB.js
 mg add partB.js
-mg create -m "feat: part B"
+mg commit -m "feat: part B"
 ```
 
 Now, if you run:
@@ -94,7 +96,7 @@ This command updates (or creates) your pull requests on Mrge (and GitHub). Each 
 
 <Tip>
   If you prefer pushing branches one at a time, that's fine, too. Just call `mg
-      push` while on each branch.
+        push` while on each branch.
 </Tip>
 
 ***
