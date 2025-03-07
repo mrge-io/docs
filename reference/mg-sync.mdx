@@ -5,23 +5,25 @@ description: 'Sync your stack with the remote trunk'
 
 ## Name
 
-`mg sync` — Rebase or merge local branches against the latest commits from the trunk branch (e.g., `main`).
+`mg sync` — Rebase or merge local branches against the latest commits from your local trunk branch (e.g., `main`).
 
 ## Synopsis
 
 ```bash
-mg sync [--rebase-only] [--merge]
+mg sync [--rebase-to-trunk][--merge]
 ```
 
 ## Description
 
-- Fetches remote updates, applies them to your current branch and all its children.
-- By default, uses a rebase strategy to keep your commit history linear.
+* Fetches remote updates, applies them to your current branch and all its children.
+
+* By default, uses a rebase strategy to keep your commit history linear.
 
 ## Options / Flags
 
-- **`--rebase-only`**: Force rebase, even if your config says otherwise.
-- **`--merge`**: Use a merge strategy instead of rebase.
+* **`--rebase-to-trunk`** or `-r`: Pull origin trunk and rebase changes to that.
+
+* **`--merge`**: Use a merge strategy instead of rebase.
 
 ## Examples
 
@@ -29,12 +31,12 @@ mg sync [--rebase-only] [--merge]
 # Basic sync with default rebase approach
 mg sync
 
-# Force a merge approach
-mg sync --merge
+# Pull origin trunk and sync your whole stack to the new trunk
+mg sync -r
 ```
 
 <Note>
-  - Conflict resolution is interactive; you must resolve conflicts before the
-  sync proceeds. - If your trunk has changed drastically, consider syncing more
-  frequently.
+  * Conflict resolution is interactive; you must resolve conflicts before the
+    sync proceeds. - If your trunk has changed drastically, consider syncing more
+    frequently.
 </Note>
