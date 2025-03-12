@@ -1,0 +1,31 @@
+---
+title: 'Overview'
+---
+
+**mrge's AI code reviewer** automatically evaluates each _new pull request_ against **custom rules** that you define. Think of these rules as **natural-language linting**—they outline what your code should (or shouldn't) do, and the AI flags any relevant concerns.
+
+> **Note**: Currently, the AI code reviewer **only runs once** per PR creation. If more commits are pushed to the same PR, an additional review is not triggered.  
+> **Future Plans**: we're working on support for re-checking whenever new commits are pushed.
+
+---
+
+## Key benefits
+
+- **Immediate feedback**: When a pull request is opened, the AI analyzes the changed files and posts warnings or comments as needed.
+- **Customizable**: You can define your own rules—e.g., "Wrap all API calls with Sentry error tracking" or "Disallow N+1 queries in database access"—to enforce team standards.
+- **Lightweight & minimal disruption**: The review shows up like any other automated check. You can merge or fix the code just as you normally would.
+
+---
+
+## Workflow summary
+
+1. **Create a pull request**: The AI reviewer is automatically triggered on the changed files.
+2. **AI generates suggestions**: If a rule is violated, the PR receives comments or warnings. Sometimes, the AI can even suggest fixes if you prompt it in the review discussion.
+3. **Developer reviews & fixes**: You decide whether to address the flagged items or ignore them.
+4. **Merge or iterate**: Once you're satisfied, merge the PR or continue making changes (knowing the AI won't re-run on those new commits—yet).
+
+---
+
+## Next steps
+
+- **[Set up custom rules](/ai-review/custom-rules)**: Learn how to define the natural-language instructions that the AI uses at PR creation.

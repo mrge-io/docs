@@ -12,64 +12,78 @@
     "strict": true
   },
   "navigation": {
-    "groups": [
+    "anchors": [
       {
-        "group": "Overview",
-        "pages": [
-          "overview",
-          "quickstart",
-          "common-commands",
-          "installation"
+        "anchor": "PR Stacking",
+        "icon": "code-branch",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "overview",
+              "quickstart",
+              "common-commands",
+              "installation"
+            ]
+          },
+          {
+            "group": "Core concepts",
+            "pages": [
+              "concepts/overview",
+              "concepts/branching-terminology"
+            ]
+          },
+          {
+            "group": "How-to guides",
+            "pages": [
+              "how-to-guides/initialize-in-repo",
+              "how-to-guides/create-a-pull-request",
+              "how-to-guides/create-a-stack",
+              "how-to-guides/keep-your-stack-updated",
+              "how-to-guides/merge-your-stack"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/command-cheatsheet",
+              "reference/mg-init",
+              "reference/mg-list",
+              "reference/mg-branch",
+              "reference/mg-checkout",
+              "reference/mg-push",
+              "reference/mg-sync",
+              "reference/mg-orphan",
+              "reference/mg-help",
+              "reference/mg-commit",
+              "reference/mg-split",
+              "reference/mg-adopt",
+              "reference/mg-reparent",
+              "reference/mg-next",
+              "reference/mg-prev"
+            ]
+          },
+          {
+            "group": "Advanced usage",
+            "pages": [
+              "advanced/partial-merges-split-commits",
+              "advanced/rolling-back-mid-stack"
+            ]
+          },
+          {
+            "group": "Additional resources",
+            "pages": [
+              "faq-and-troubleshooting"
+            ]
+          }
         ]
       },
       {
-        "group": "Core concepts",
+        "anchor": "AI Review",
+        "icon": "robot",
         "pages": [
-          "concepts/overview",
-          "concepts/branching-terminology"
-        ]
-      },
-      {
-        "group": "How-to guides",
-        "pages": [
-          "how-to-guides/initialize-in-repo",
-          "how-to-guides/create-a-pull-request",
-          "how-to-guides/create-a-stack",
-          "how-to-guides/keep-your-stack-updated",
-          "how-to-guides/merge-your-stack"
-        ]
-      },
-      {
-        "group": "Reference",
-        "pages": [
-          "reference/command-cheatsheet",
-          "reference/mg-init",
-          "reference/mg-list",
-          "reference/mg-branch",
-          "reference/mg-checkout",
-          "reference/mg-push",
-          "reference/mg-sync",
-          "reference/mg-orphan",
-          "reference/mg-help",
-          "reference/mg-commit",
-          "reference/mg-split",
-          "reference/mg-adopt",
-          "reference/mg-reparent",
-          "reference/mg-next",
-          "reference/mg-prev"
-        ]
-      },
-      {
-        "group": "Advanced usage",
-        "pages": [
-          "advanced/partial-merges-split-commits",
-          "advanced/rolling-back-mid-stack"
-        ]
-      },
-      {
-        "group": "Additional resources",
-        "pages": [
-          "faq-and-troubleshooting"
+          "ai-review/overview",
+          "ai-review/prompting"
         ]
       }
     ]
