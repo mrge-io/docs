@@ -1,0 +1,45 @@
+---
+title: 'AI review settings'
+---
+
+Within your project's [settings](https://mrge.io/settings), the **AI review** section offers controls to tailor the reviewer's behavior.
+
+<img
+  src="/ai-review/images/ai-review-settings.png"
+  alt="AI review settings"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+## Configurable options
+
+<Note>
+  AI review settings are configured at the repository level, allowing you to
+  have different configuration options for different repositories.
+</Note>
+
+1. **Review instructions**
+
+   - Provide general guidelines for the AI in plaintext.
+
+2. **Library & framework versions**
+
+   - Specify or override detected versions (e.g., React 18, Django 4) to improve suggestion accuracy.
+   - Note that by default mrge will try to automatically detect the common libraries and versions they use to ensure that it tailors its reviews to those specific ones.
+
+3. **Ignore patterns**
+
+   - Define files or directories (using regex or glob) that the AI should not analyze (e.g., `dist/`, `docs/`).
+
+4. **Draft PRs**
+
+   - Enable or disable AI reviews for draft pull requests.
+
+5. **Memory management**
+
+   - Review or modify stored feedback.
+   - Delete entries if they are no longer applicable.
+
+## Next steps
+
+- [Providing feedback](/ai-review/feedback): Refine the AI's suggestions directly within PR comments.
+- [Custom rules](/ai-review/custom-rules): Create domain-specific checks to expand beyond general analysis.

@@ -1,0 +1,81 @@
+---
+title: 'Custom rules'
+description: 'Learn how to define custom rules'
+---
+
+**Custom rules** allow you to define specific rules that mrge's AI reviewer will enforce on every pull request. These typically go beyond the capabilities of standard linters.
+
+<img
+  src="/ai-review/images/ai-review-page.png"
+  alt="Custom rules"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+## Creating a custom rule
+
+To define a rule, navigate to the **AI review** page in mrge and click "Add rule".
+
+Each custom rule includes:
+
+1. **A Name**: A concise title, like "Prevent N+1 Queries" or "Require Sentry Error Handling."
+2. **A Description**: A clear, natural-language instruction the AI will use, such as "Flag code that may cause multiple database calls inside loops."
+
+<img
+  src="/ai-review/images/add-custom-rule-modal.png"
+  alt="Add rule"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+<Info>
+  Custom rules are defined at the repository level, and will be applied to all
+  pull requests in the repository. This means that you can enforce different
+  custom rules for each repository.
+</Info>
+
+## Example custom rules
+
+- **"Flag potential N+1 queries"**
+  _Detects patterns that might result in multiple database calls within loops or repeated function calls._
+
+- **"Wrap external API calls with Sentry error handling"**
+  _Identifies external service calls lacking proper Sentry error tracking._
+
+- **"Require docstrings for public functions"**
+  _Highlights any public functions missing descriptive comments or docstrings._
+
+When a violation of a rule is detected in a pull request, the AI will comment directly on the affected lines.
+
+<Tip>
+  Be specific and direct when defining rules. For instance, instead of saying,
+  "Avoid unnecessary logs," say, "Disallow `console.log` statements in
+  production code."
+</Tip>
+
+## Importing rules from Cursor
+
+If your team uses [Cursor](https://www.cursor.so/) rules, you can easily import these into mrge by clicking the **Sync Cursor Rules** button in the AI review page.
+
+mrge will analyze your Cursor rule files, suggest suitable custom rules, and let you select which ones you'd like to enable.
+
+## Suggested and popular rules
+
+On the Custom Rules page, you'll also see two helpful sections:
+
+- **Suggested Rules**: Automatically recommended based on your team's codebase, past comments, and review patterns.
+- **Popular Rules**: Common rules frequently adopted by other teams and similar projects.
+
+These sections can help you quickly establish effective review guidelines or inspire new rules you hadn't considered.
+
+## Limitations
+
+- **Single-check per PR**: mrge currently performs rule checks only once when the pull request is first opened. Subsequent commits won't trigger additional checks yet.
+- **Potential false positives**: Occasionally, the AI might incorrectly flag or overlook certain scenarios. Consider AI feedback as helpful guidance rather than definitive judgments.
+
+## Best practices for custom rules
+
+- **Clear and specific**: Rules should clearly communicate exactly what the AI should look for.
+- **Complement existing tools**: Custom rules should focus on checks that standard tools like ESLint or Prettier might miss.
+
+## Next steps
+
+**[Overview](/ai-review/overview)**: Understand how mrge reviews pull requests by default.

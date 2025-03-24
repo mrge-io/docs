@@ -2,30 +2,71 @@
 title: 'Overview'
 ---
 
-**mrge's AI code reviewer** automatically evaluates each _new pull request_ against **custom rules** that you define. Think of these rules as **natural-language linting**—they outline what your code should (or shouldn't) do, and the AI flags any relevant concerns.
+**mrge**'s AI reviewer helps software teams ship code faster by providing immediate, actionable feedback on pull requests.
 
-> **Note**: Currently, the AI code reviewer **only runs once** per PR creation. If more commits are pushed to the same PR, an additional review is not triggered.  
-> **Future Plans**: we're working on support for re-checking whenever new commits are pushed.
+It learns your repository context, coding patterns, and adapts based on your feedback to deliver more accurate reviews.
 
----
+## Key features
 
-## Key benefits
+1. **Automated code reviews**
 
-- **Immediate feedback**: When a pull request is opened, the AI analyzes the changed files and posts warnings or comments as needed.
-- **Customizable**: You can define your own rules—e.g., "Wrap all API calls with Sentry error tracking" or "Disallow N+1 queries in database access"—to enforce team standards.
-- **Lightweight & minimal disruption**: The review shows up like any other automated check. You can merge or fix the code just as you normally would.
+   - Scans pull requests for logic errors, style inconsistencies, and potential vulnerabilities.
+   - Leaves structured comments and suggestions directly in the PR.
 
----
+2. **Codebase awareness**
 
-## Workflow summary
+   - Detects libraries and frameworks in your repo (including their versions).
+   - References relevant code patterns or utilities found in your codebase when suggesting improvements.
 
-1. **Create a pull request**: The AI reviewer is automatically triggered on the changed files.
-2. **AI generates suggestions**: If a rule is violated, the PR receives comments or warnings. Sometimes, the AI can even suggest fixes if you prompt it in the review discussion.
-3. **Developer reviews & fixes**: You decide whether to address the flagged items or ignore them.
-4. **Merge or iterate**: Once you're satisfied, merge the PR or continue making changes (knowing the AI won't re-run on those new commits—yet).
+3. **Custom rules**
 
----
+   - Enforce specialized guidelines, such as domain-specific standards or internal best practices.
+   - Automatically flags violations based on your configured rules.
+
+4. **Adaptive feedback**
+
+   - Learns from your team's past merges, comments, and preferences.
+   - Improves over time to reduce false positives and tailor advice to your codebase.
+
+## How it works
+
+<Steps>
+  <Step title="Enable AI review">
+    Enable AI review for your repository in the AI review page.
+    <img src="/ai-review/images/ai-review-page.png" alt="Enable AI review"  className="border border-zinc-800 rounded-lg"/>
+  </Step>
+
+    <Step title="Open a pull request">
+    Once a new PR is created, mrge scans the changed files and runs its analysis.
+    </Step>
+
+    <Step title="Automated review">
+    The AI leaves comments regarding potential issues or recommended improvements.
+    </Step>
+
+    <Step title="Custom rules check">
+    If you have custom rules in place, the AI will also flag any violations based
+    on those criteria.
+    </Step>
+
+    <Step title="Feedback and collaboration">
+    If a comment needs clarification or correction, you can reply to the AI
+    comment to refine its behavior for future reviews.
+    </Step>
+
+  <Step title="Merge or iterate">
+    Address, ignore, or further discuss the flagged items. When ready, merge the PR.
+  </Step>
+</Steps>
+
+<Note>
+  Currently, mrge analyzes the code once per pull request creation. If you
+  commit additional changes, the AI will not automatically re-check those (this
+  feature is planned for a future release).
+</Note>
 
 ## Next steps
 
-- **[Set up custom rules](/ai-review/custom-rules)**: Learn how to define the natural-language instructions that the AI uses at PR creation.
+- **[Custom rules](/ai-review/custom-rules)**: Create and manage your own rules to enforce specific guidelines.
+- **[AI review settings](/ai-review/ai-review-settings)**: Configure library versions, ignore patterns, and more.
+- **[Providing feedback](/ai-review/feedback)**: Fine-tune the AI by replying to its comments.
