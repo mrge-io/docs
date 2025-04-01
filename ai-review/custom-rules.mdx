@@ -17,8 +17,18 @@ To define a rule, navigate to the **AI review** page in mrge and click "Add rule
 
 Each custom rule includes:
 
-1. **A Name**: A concise title, like "Prevent N+1 Queries" or "Require Sentry Error Handling."
-2. **A Description**: A clear, natural-language instruction the AI will use, such as "Flag code that may cause multiple database calls inside loops."
+1. **A Name**  
+   A concise title, like "Prevent N+1 Queries" or "Require Sentry Error Handling."
+
+2. **A Description**  
+   A clear, natural-language instruction the AI will use, such as "Flag code that may cause multiple database calls inside loops."
+
+3. **Optional Path Filters**  
+   Use [Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) to limit where the rule applies (or exclude certain paths). This is especially helpful for monorepos, where different directories often require different rules.
+
+   For example:
+   - **Include**: `backend/**` to apply the rule to only files under a `backend` folder.
+   - **Exclude**: `!tests/**` to ignore test files and focus on production code.
 
 <img
   src="/ai-review/images/add-custom-rule-modal.png"
@@ -34,13 +44,13 @@ Each custom rule includes:
 
 ## Example custom rules
 
-- **"Flag potential N+1 queries"**
+- **"Flag potential N+1 queries"**  
   _Detects patterns that might result in multiple database calls within loops or repeated function calls._
 
-- **"Wrap external API calls with Sentry error handling"**
+- **"Wrap external API calls with Sentry error handling"**  
   _Identifies external service calls lacking proper Sentry error tracking._
 
-- **"Require docstrings for public functions"**
+- **"Require docstrings for public functions"**  
   _Highlights any public functions missing descriptive comments or docstrings._
 
 When a violation of a rule is detected in a pull request, the AI will comment directly on the affected lines.
@@ -53,13 +63,13 @@ When a violation of a rule is detected in a pull request, the AI will comment di
 
 ## Importing rules from Cursor
 
-If your team uses [Cursor](https://www.cursor.so/) rules, you can easily import these into mrge by clicking the **Sync Cursor Rules** button in the AI review page.
+If your team uses [Cursor](https://www.cursor.so/) rules, you can easily import these into mrge by clicking the **Sync Cursor Rules** button on the AI review page.
 
 mrge will analyze your Cursor rule files, suggest suitable custom rules, and let you select which ones you'd like to enable.
 
 ## Suggested and popular rules
 
-On the Custom Rules page, you'll also see two helpful sections:
+On the **Custom Rules** page, you'll also see two helpful sections:
 
 - **Suggested Rules**: Automatically recommended based on your team's codebase, past comments, and review patterns.
 - **Popular Rules**: Common rules frequently adopted by other teams and similar projects.
@@ -75,7 +85,8 @@ These sections can help you quickly establish effective review guidelines or ins
 
 - **Clear and specific**: Rules should clearly communicate exactly what the AI should look for.
 - **Complement existing tools**: Custom rules should focus on checks that standard tools like ESLint or Prettier might miss.
+- **Leverage path filters**: When working with monorepos, use Glob patterns to apply or exclude rules in specific folders, ensuring you only flag relevant sections of your code.
 
 ## Next steps
 
-**[Overview](/ai-review/overview)**: Understand how mrge reviews pull requests by default.
+[**Overview**](/ai-review/overview): Understand how mrge reviews pull requests by default.

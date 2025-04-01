@@ -14,15 +14,6 @@
   "navigation": {
     "anchors": [
       {
-        "anchor": "mrge platform",
-        "icon": "desktop",
-        "pages": [
-          "code-review-platform/review-pull-requests",
-          "code-review-platform/dashboard",
-          "code-review-platform/desktop-app"
-        ]
-      },
-      {
         "anchor": "AI review",
         "icon": "robot",
         "pages": [
@@ -30,6 +21,15 @@
           "ai-review/custom-rules",
           "ai-review/feedback",
           "ai-review/ai-review-settings"
+        ]
+      },
+      {
+        "anchor": "mrge platform",
+        "icon": "desktop",
+        "pages": [
+          "code-review-platform/review-pull-requests",
+          "code-review-platform/dashboard",
+          "code-review-platform/desktop-app"
         ]
       },
       {
