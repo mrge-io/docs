@@ -1,0 +1,52 @@
+---
+title: 'Comment navbar'
+description: 'Learn how to use the comment navbar with mrge'
+---
+
+The comment navigation bar helps you quickly move through unresolved comments in a pull request, speeding up the review process by letting you jump directly to what matters.
+
+<img
+  src="/code-review-platform/images/comment-navbar.png"
+  alt="Comment navbar"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+## When it appears
+
+The comment navigation bar automatically appears at the bottom of your screen whenever there's at least one unresolved comment in the pull request you're viewing. It's designed to keep you focused and moving efficiently.
+
+## Navigating comments
+
+Easily navigate between comments:
+
+- **Use the navigation buttons**: Click the arrows on the navigation bar to jump to the previous or next unresolved comment.
+- **Use keyboard shortcuts**: Navigate swiftly through comments using:
+  - `Option ↑` (Previous comment)
+  - `Option ↓` (Next comment)
+
+The currently selected comment is clearly highlighted with a white outline, making it easy to keep track of your position.
+
+## Integration with your AI IDE (Copy with Context)
+
+Use this action when you want an AI agent to propose or even implement the fix:
+
+- **What it copies** — the comment text, filename, and an exact code snippet around the affected lines, packaged in a clean block your AI IDE can parse.
+- **How to trigger** — click **Copy with Context** on the navigation bar (or hit `C` when the bar is focused), then paste directly into tools like Cursor, Codeium, or GitHub Copilot Chat.
+- **Quick loop tip** — use `Option ↓` to jump, `C` to copy, paste into your IDE, get the patch, then hop back and resolve.
+
+## Resolving comments
+
+Close out discussions as you work and keep momentum:
+
+- **Resolve button** — marks the comment addressed and instantly advances to the next unresolved item.
+- **Keyboard shortcut** — press `Cmd E` (⌘ E) while the comment is selected to resolve without touching the mouse.
+- **Undo** — reopen the comment from the diff if you resolved by mistake or want to edit your answer.
+
+## Auto-advance
+
+Resolving a comment automatically moves you to the next unresolved comment, streamlining your review workflow and keeping interruptions to a minimum.
+
+## Tips
+
+- Quickly resolve simple issues to rapidly progress through a review.
+- Use the "Copy with Context" feature for effortless integration with your AI-powered development tools.

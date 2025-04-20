@@ -1,0 +1,129 @@
+---
+title: 'Reviewing pull requests'
+description: 'Learn how to review pull requests with mrge'
+---
+
+mrge makes reviewing pull requests fast, intuitive, and keyboard-driven, helping your team ship quality code faster.
+
+
+<img
+  src="/code-review-platform/images/pr-overview.png"
+  alt="Pull request overview"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+## Layout
+
+When you open a pull request, you'll first see the PR overview, which includes the description, AI review statuses, reviewers, and other key information. Below this overview, you'll find two main tabs:
+
+- **Discussion tab:** View and participate in discussions, comments, and general feedback.
+- **Changes tab:** See code diffs, navigate file changes, and leave inline comments.
+
+Within the Changes tab, you'll see two main areas:
+
+- **Intelligently ordered files (left):** Easily navigate between files and versions. Click on a file to view its changes.
+- **Actual diffs (right):** View the detailed code differences and inline comments.
+
+## Navigating diffs
+
+Quickly move through diffs to speed up your review:
+
+- **Toggle tabs:** `C` (changes tab) / `D` (discussion tab).
+- **Scroll:** `J` (down) / `K` (up).
+- **Navigate comments:** `Option + ↑` (previous comment) / `Option + ↓` (next comment).
+- **Toggle diff view:** `Cmd + Shift + U` (unified) / `Cmd + Shift + S` (split).
+
+## File versions
+
+A *version* snapshot is created on **every push** to the PR branch. Switching versions lets you see **exactly what changed since you last viewed the PR**, rather than the full diff against `main`.
+
+<img
+  src="/code-review-platform/images/version-comparison.png"
+  alt="Version comparison"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+- **Pick a version:** In the file‑tree header, open the **Version dropdown** and choose the commit snapshot you want to compare.
+- **Review incrementally:** Select *Previous version → Latest* to review only the new changes pushed after your last visit.
+- **Debug regressions:** Jump back to the first version to understand how the PR evolved over time.
+- **Spot outdated comments:** Any comment left on a line that changed in a newer version is automatically flagged with an **Outdated** tag, keeping discussions focused on the latest code.
+
+> **Tip:** Versions respect all the same navigation shortcuts, so you can keep your hands on the keyboard while reviewing incremental updates.
+
+## Leaving comments
+
+Comments help guide authors to refine code before merging. mrge supports two types of comments:
+
+- **Inline comments:** Click on a specific line number to leave a line‑level comment.
+- **General file comments:** Leave overall comments about the file at the bottom of the diff view.
+
+mrge supports Markdown formatting for rich and readable feedback. Include code snippets clearly by using triple backticks:
+
+````markdown
+```javascript
+const add = (a, b) => a + b;
+```
+````
+
+You can also click the **GIF** button—or press `Cmd + Shift + G`—to browse our GIF library and drop an animated image straight into your comment or review—perfect for celebratory approvals or quick visual cues.
+
+<img
+  src="/code-review-platform/images/gif-tray.png"
+  alt="GIF tray"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+### Suggestions in one click
+
+If you prefix the fenced block with the word `suggestion`, mrge transforms it into an **apply‑in‑one‑click patch**:
+
+````markdown
+```suggestion
+const add = (a, b) => a + b;
+```
+````
+
+Reviewers can then click **Apply suggestion** and commit the change instantly.
+
+### AI‑generated suggestions
+
+Not sure of the exact code? Click the **Generate suggestion** button next to the comment field (or hit `Cmd + Enter` after typing your comment). mrge sends the surrounding context to the AI and inserts a ready‑to‑apply patch inside your comment draft—edit as needed, then hit **Submit**.
+
+<img
+  src="/code-review-platform/images/ai-code-suggestion.png"
+  alt="AI code suggestion"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+## Submitting your review
+
+mrge lets you submit your review clearly and quickly. At the top right of the PR page, use the buttons:
+
+- **Approve:** Mark the PR as ready to merge. Shortcut: `Shift + A`.
+- **Request changes:** Indicate that further work is needed. Shortcut: `Shift + R`.
+- **Comment:** Leave neutral feedback or ask questions. Shortcut: `Shift + C`.
+
+Your comments automatically save as drafts. When ready, click **Submit review** to publish.
+
+<img
+  src="/code-review-platform/images/submit-review.png"
+  alt="Submit review"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+## Keyboard shortcuts
+
+Speed up your workflow with keyboard shortcuts:
+
+| Shortcut                            | Action                         |
+| ----------------------------------- | ------------------------------ |
+| `C` / `D`                           | Changes / Discussion tab       |
+| `J` / `K`                           | Scroll down / up               |
+| `Cmd + Shift + U` / `Cmd + Shift + S` | Unified / Split diff view      |
+| `Option + ↑ / ↓`                    | Previous / next comment        |
+| `Shift + A`                         | Approve PR                     |
+| `Shift + R`                         | Request changes                |
+| `Shift + C`                         | Add general comment            |
+| `Cmd + Shift + G`                   | Open GIF library               |
+
+

@@ -1,0 +1,36 @@
+---
+title: 'AI change visualizations'
+---
+
+AI change visualizations work **hand-in-hand with intelligent file ordering**. When mrge clusters related files into a logical change-set, it decides—on a per-group basis—whether an AI summary and visual diff will meaningfully speed up the review. 
+
+If the edits are straightforward, the group is shown without extra visuals to keep the page light; if the changes are dense or spread across several files, mrge adds the visualization automatically.
+
+<img
+  src="/code-review-platform/images/file-ordering.png"
+  alt="File ordering"
+  className="border border-zinc-800 rounded-lg"
+/>
+
+
+## Why it matters
+
+- **Instant context for dense diffs**: Large, refactor-heavy groups get an at-a-glance explanation so you know what changed before diving in.
+- **Less cognitive load**: You review only the groups that truly need extra guidance; simple tweaks aren't over-explained.
+- **Fewer missed side-effects**: The AI summary calls out secondary impacts (e.g., API signature updates) that might hide in a plain diff.
+
+## Grouped change cards
+
+Each change group displays a compact card directly above its first file:
+
+- **AI summary**: One or two sentences that explain the intent of the edits. This is shown whenever mrge believes written context will accelerate the review.
+- **Visual diff** *(optional)*: A side-by-side snippet or small diagram that highlights the most significant before/after. The diagram only appears if it adds clarity; simpler groups may show the summary alone.
+
+## When visualizations appear
+
+mrge doesn't rely on hard line-count rules. Instead, it asks a simpler question for every group: **"Would an extra explanation or diagram materially help the reviewer?"**
+
+- If **yes**, you'll see a summary, and—when visual context matters—a visual diff as well.
+- If **no**, the group renders as a standard diff to keep noise low.
+
+Because the decision is heuristic, you might see a summary-only card in one group, a full summary + diagram in another, and no card at all for straightforward tweaks.

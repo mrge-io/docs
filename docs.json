@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "mint",
   "name": "mrge documentation",
   "colors": {
     "primary": "#000000",
@@ -12,9 +12,9 @@
     "strict": true
   },
   "navigation": {
-    "anchors": [
+    "tabs": [
       {
-        "anchor": "AI review",
+        "tab": "AI code review",
         "icon": "robot",
         "pages": [
           "ai-review/overview",
@@ -24,16 +24,33 @@
         ]
       },
       {
-        "anchor": "mrge platform",
+        "tab": "Intelligent review platform",
         "icon": "desktop",
-        "pages": [
-          "code-review-platform/review-pull-requests",
-          "code-review-platform/dashboard",
-          "code-review-platform/desktop-app"
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "code-review-platform/reviewing-prs",
+              "code-review-platform/intelligent-diff-ordering",
+              "code-review-platform/diff-group-explanation",
+              "code-review-platform/ai-sidebar",
+              "code-review-platform/ai-pr-descriptions"
+            ]
+          },
+          {
+            "group": "Navigating mrge",
+            "pages": [
+              "code-review-platform/dashboard",
+              "code-review-platform/comment-navbar",
+              "code-review-platform/desktop-app",
+              "code-review-platform/command-bar",
+              "code-review-platform/slack"
+            ]
+          }
         ]
       },
       {
-        "anchor": "PR stacking",
+        "tab": "PR stacking",
         "icon": "code-branch",
         "groups": [
           {
