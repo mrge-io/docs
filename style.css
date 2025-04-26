@@ -26,3 +26,16 @@
 .codeblock-dark {
   background-color: #17181a !important;
 }
+
+/* Force white style for top bar CTA button */
+#topbar-cta-button a span.absolute {
+  background-color: white !important;
+}
+
+#topbar-cta-button a span.z-10 {
+  color: #17181a !important; /* Dark color for text contrast */
+}
+
+#topbar-cta-button a svg {
+  color: #17181a !important; /* Dark color for icon contrast */
+}
