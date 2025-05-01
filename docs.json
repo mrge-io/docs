@@ -44,7 +44,9 @@
               "code-review-platform/comment-navbar",
               "code-review-platform/desktop-app",
               "code-review-platform/command-bar",
-              "code-review-platform/slack"
+              "code-review-platform/slack",
+              "account/subscription",
+              "account/support"
             ]
           }
         ]
