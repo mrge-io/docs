@@ -55,7 +55,8 @@
             "group": "Account & support",
             "pages": [
               "account/subscription",
-              "account/support"
+              "account/support",
+              "account/privacy-security"
             ]
           }
         ]
