@@ -14,37 +14,46 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "AI code review",
-        "icon": "robot",
-        "pages": [
-          "ai-review/overview",
-          "ai-review/custom-rules",
-          "ai-review/feedback",
-          "ai-review/ai-review-settings"
-        ]
-      },
-      {
         "tab": "Review platform",
         "icon": "desktop",
         "groups": [
           {
-            "group": "Overview",
+            "group": "AI code review",
             "pages": [
-              "code-review-platform/reviewing-prs",
-              "code-review-platform/intelligent-diff-ordering",
-              "code-review-platform/diff-group-explanation",
-              "code-review-platform/ai-sidebar",
-              "code-review-platform/ai-pr-descriptions"
+              "ai-review/overview",
+              "ai-review/custom-rules",
+              "ai-review/feedback",
+              "ai-review/ai-review-settings"
             ]
           },
           {
-            "group": "Navigating mrge",
+            "group": "Reviewing pull requests",
+            "pages": [
+              "code-review-platform/reviewing-prs",
+              "code-review-platform/comment-navbar",
+              {
+                "group": "AI features",
+                "pages": [
+                  "code-review-platform/intelligent-diff-ordering",
+                  "code-review-platform/ai-pr-descriptions",
+                  "code-review-platform/diff-group-explanation",
+                  "code-review-platform/ai-sidebar"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Platform tools & navigation",
             "pages": [
               "code-review-platform/dashboard",
-              "code-review-platform/comment-navbar",
               "code-review-platform/desktop-app",
               "code-review-platform/command-bar",
-              "code-review-platform/slack",
+              "code-review-platform/slack"
+            ]
+          },
+          {
+            "group": "Account & support",
+            "pages": [
               "account/subscription",
               "account/support"
             ]
