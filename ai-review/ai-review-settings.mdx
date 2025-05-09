@@ -30,6 +30,34 @@ Within your project's [settings](https://mrge.io/settings), the **AI review** se
 
    - Define files or directories (using regex or glob) that the AI should not analyze (e.g., `dist/`, `docs/`).
 
+4. **Exclude generated files**
+
+   For large repositories, you can tell mrge to ignore files that don't require review. This is handy for:
+
+   - Data files that don’t need to be reviewed
+   - Auto‑generated code produced by build or code‑gen tools
+   - Any other files that would make a pull request too large for mrge to process
+
+   You can do this by marking files as generated in your repository’s `.gitattributes` file:
+
+   ```gitattributes
+   # Exclude specific files
+   docs/data.txt linguist-generated=true
+
+   # Exclude file types
+   *.csv linguist-generated=true
+   *.pb.go linguist-generated=true
+
+   # Exclude entire directories
+   data/* linguist-generated=true
+   generated/* linguist-generated=true
+   ```
+
+   Files marked as `linguist-generated` will be:
+
+   - Automatically collapsed in GitHub pull request views
+   - Skipped entirely during **mrge**'s code review
+
 ## Next steps
 
 - [Providing feedback](/ai-review/feedback): Refine the AI's suggestions directly within PR comments.
