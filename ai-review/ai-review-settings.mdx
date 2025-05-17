@@ -2,7 +2,7 @@
 title: 'AI review settings'
 ---
 
-Within your project's [settings](https://mrge.io/settings), the **AI review** section offers controls to tailor the reviewer's behavior.
+Within your project's [settings](https://cubic.io/settings), the **AI review** section offers controls to tailor the reviewer's behavior.
 
 <img
   src="/ai-review/images/ai-review-settings.png"
@@ -24,7 +24,7 @@ Within your project's [settings](https://mrge.io/settings), the **AI review** se
 2. **Library & framework versions**
 
    - Specify or override detected versions (e.g., React 18, Django 4) to improve suggestion accuracy.
-   - Note that by default mrge will try to automatically detect the common libraries and versions they use to ensure that it tailors its reviews to those specific ones.
+   - Note that by default cubic will try to automatically detect the common libraries and versions they use to ensure that it tailors its reviews to those specific ones.
 
 3. **Ignore patterns**
 
@@ -32,11 +32,11 @@ Within your project's [settings](https://mrge.io/settings), the **AI review** se
 
 4. **Exclude generated files**
 
-   For large repositories, you can tell mrge to ignore files that don't require review. This is handy for:
+   For large repositories, you can tell cubic to ignore files that don't require review. This is handy for:
 
    - Data files that don’t need to be reviewed
    - Auto‑generated code produced by build or code‑gen tools
-   - Any other files that would make a pull request too large for mrge to process
+   - Any other files that would make a pull request too large for cubic to process
 
    You can do this by marking files as generated in your repository’s `.gitattributes` file:
 
@@ -56,7 +56,7 @@ Within your project's [settings](https://mrge.io/settings), the **AI review** se
    Files marked as `linguist-generated` will be:
 
    - Automatically collapsed in GitHub pull request views
-   - Skipped entirely during **mrge**'s code review
+   - Skipped entirely during **cubic**'s code review
 
 ## Next steps
 

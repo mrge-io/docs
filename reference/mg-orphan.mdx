@@ -1,11 +1,11 @@
 ---
-title: "mg orphan"
-description: "Remove a branch from mrge's tracking"
+title: 'mg orphan'
+description: "Remove a branch from cubic's tracking"
 ---
 
 ## Name
 
-`mg orphan` — Remove a branch from mrge's stack management.
+`mg orphan` — Remove a branch from cubic's stack management.
 
 ## Synopsis
 
@@ -16,9 +16,9 @@ mg orphan <branch_name> # Orphan a specified branch
 
 ## Description
 
-* Disassociates `<branch_name>` from your mrge stack (does not delete the branch from Git).
+- Disassociates `<branch_name>` from your cubic stack (does not delete the branch from Git).
 
-* Child branches remain but will still point to the old parent unless reparented or orphaned as well.
+- Child branches remain but will still point to the old parent unless reparented or orphaned as well.
 
 ## Examples
 
@@ -31,6 +31,6 @@ mg orphan
 ```
 
 <Note>
-  * This is **irreversible** in mrge's metadata; to bring it back, use [mg
-    adopt](/reference/mg-adopt). - Orphaned branches won't appear in `mg list`.
+  * This is **irreversible** in cubic's metadata; to bring it back, use [mg
+  adopt](/reference/mg-adopt). - Orphaned branches won't appear in `mg list`.
 </Note>

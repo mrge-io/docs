@@ -8,12 +8,12 @@ If you're only opening **one** pull request—no complex stacking—**you can ke
 <Note>
   **Prerequisites**
 
-  * [Install mg](/installation) (optional for single PRs, but useful if you want to try mg's features)
+- [Install mg](/installation) (optional for single PRs, but useful if you want to try mg's features)
 
-  * [Initialize your repo](/how-to-guides/initialize-in-repo) if you plan on using mg for pushing to mrge/GitHub
-</Note>
+- [Initialize your repo](/how-to-guides/initialize-in-repo) if you plan on using mg for pushing to cubic/GitHub
+  </Note>
 
-***
+---
 
 ## 1. Make your changes (Option A: Use mg)
 
@@ -27,6 +27,7 @@ If you're only opening **one** pull request—no complex stacking—**you can ke
     ```
 
     This automatically creates a new branch and commits changes under that branch.
+
   </Step>
 </Steps>
 
@@ -39,11 +40,9 @@ If you're only opening **one** pull request—no complex stacking—**you can ke
     ```
   </Step>
 
-  <Step title="Make changes">
-    ```bash
-    echo "console.log('Single PR')" > single.js 
-    ```
-  </Step>
+<Step title="Make changes">
+  ```bash echo "console.log('Single PR')" > single.js ```
+</Step>
 
   <Step title="Commit your changes">
     ```bash
@@ -55,7 +54,7 @@ If you're only opening **one** pull request—no complex stacking—**you can ke
 
 Both approaches are valid. In either case, your new branch is ready for a pull request.
 
-***
+---
 
 ## 2. Push to open a PR
 
@@ -64,7 +63,8 @@ Both approaches are valid. In either case, your new branch is ready for a pull r
   mg push 
   ```
 
-  mg might open your editor (vim, nano, etc.) so you can edit the PR title/description. It then prints a link to the PR on mrge.io.
+mg might open your editor (vim, nano, etc.) so you can edit the PR title/description. It then prints a link to the PR on cubic.io.
+
 </Accordion>
 
 <Accordion title="Using Git">
@@ -72,12 +72,13 @@ Both approaches are valid. In either case, your new branch is ready for a pull r
   git push -u origin single-pr-example 
   ```
 
-  Then open [mrge.io](https://mrge.io) in your browser to create the PR manually.
+Then open [cubic.io](https://cubic.io) in your browser to create the PR manually.
+
 </Accordion>
 
-Either way, you end up with a single PR on GitHub or mrge.
+Either way, you end up with a single PR on GitHub or cubic.
 
-***
+---
 
 ## 3. Respond to reviews
 
@@ -88,60 +89,65 @@ If your teammates review the PR and request changes:
     Using mg:
 
     ```bash
-    mg checkout single-pr-example 
+    mg checkout single-pr-example
     ```
 
     or using Git:
 
     ```bash
-    git checkout single-pr-example 
+    git checkout single-pr-example
     ```
+
   </Step>
 
   <Step title="Make and commit changes">
     Using Git:
 
     ```bash
-    git commit -am "Fix: addressed feedback" 
+    git commit -am "Fix: addressed feedback"
     ```
 
     or using mg:
 
     ```bash
-    mg add . 
-    mg commit -m "Fix: addressed feedback" 
+    mg add .
+    mg commit -m "Fix: addressed feedback"
     ```
+
   </Step>
 
   <Step title="Push changes">
     Using mg:
 
     ```bash
-    mg push 
+    mg push
     ```
 
     or using Git:
 
     ```bash
-    git push 
+    git push
     ```
 
     The existing PR automatically updates.
+
   </Step>
 </Steps>
 
-***
+---
 
 ## 4. Merge
 
-You can merge your single-PR branch through **GitHub**'s UI or the [mrge UI](/how-to-guides/merge-your-stack) (mrge can show just one PR, even if it's not a stack). Either way, once it's approved and merged, you're done!
+You can merge your single-PR branch through **GitHub**'s UI or the [cubic UI](/how-to-guides/merge-your-stack) (cubic can show just one PR, even if it's not a stack). Either way, once it's approved and merged, you're done!
 
-***
+---
 
 ## That's it!
 
 For a single pull request, your workflow doesn't really change—you can continue using Git exactly as before. **mg** is there if you'd like to streamline creating branches and pushing PRs, but it's optional for one-branch flows.
 
 <Tip>
-  **Want to see mg's real power?** Check out [Create a Stack](/how-to-guides/create-a-stack) to learn about stacking multiple branches for cleaner, smaller PRs.
+  **Want to see mg's real power?** Check out [Create a
+  Stack](/how-to-guides/create-a-stack) to learn about stacking multiple
+  branches for cleaner, smaller PRs.
 </Tip>

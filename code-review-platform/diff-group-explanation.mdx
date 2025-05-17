@@ -2,16 +2,15 @@
 title: 'AI change visualizations'
 ---
 
-AI change visualizations work **hand-in-hand with intelligent file ordering**. When mrge clusters related files into a logical change-set, it decides—on a per-group basis—whether an AI summary and visual diff will meaningfully speed up the review. 
+AI change visualizations work **hand-in-hand with intelligent file ordering**. When cubic clusters related files into a logical change-set, it decides—on a per-group basis—whether an AI summary and visual diff will meaningfully speed up the review.
 
-If the edits are straightforward, the group is shown without extra visuals to keep the page light; if the changes are dense or spread across several files, mrge adds the visualization automatically.
+If the edits are straightforward, the group is shown without extra visuals to keep the page light; if the changes are dense or spread across several files, cubic adds the visualization automatically.
 
 <img
   src="/code-review-platform/images/file-ordering.png"
   alt="File ordering"
   className="border border-zinc-800 rounded-lg"
 />
-
 
 ## Why it matters
 
@@ -23,12 +22,12 @@ If the edits are straightforward, the group is shown without extra visuals to ke
 
 Each change group displays a compact card directly above its first file:
 
-- **AI summary**: One or two sentences that explain the intent of the edits. This is shown whenever mrge believes written context will accelerate the review.
-- **Visual diff** *(optional)*: A side-by-side snippet or small diagram that highlights the most significant before/after. The diagram only appears if it adds clarity; simpler groups may show the summary alone.
+- **AI summary**: One or two sentences that explain the intent of the edits. This is shown whenever cubic believes written context will accelerate the review.
+- **Visual diff** _(optional)_: A side-by-side snippet or small diagram that highlights the most significant before/after. The diagram only appears if it adds clarity; simpler groups may show the summary alone.
 
 ## When visualizations appear
 
-mrge doesn't rely on hard line-count rules. Instead, it asks a simpler question for every group: **"Would an extra explanation or diagram materially help the reviewer?"**
+cubic doesn't rely on hard line-count rules. Instead, it asks a simpler question for every group: **"Would an extra explanation or diagram materially help the reviewer?"**
 
 - If **yes**, you'll see a summary, and—when visual context matters—a visual diff as well.
 - If **no**, the group renders as a standard diff to keep noise low.

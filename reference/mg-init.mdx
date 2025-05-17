@@ -1,11 +1,11 @@
 ---
-title: "mg init"
-description: "Initialize a repository to use mrge"
+title: 'mg init'
+description: 'Initialize a repository to use cubic'
 ---
 
 ## Name
 
-`mg init` — Initialize the current repository for mrge, setting up necessary metadata.
+`mg init` — Initialize the current repository for cubic, setting up necessary metadata.
 
 ## Synopsis
 
@@ -15,13 +15,13 @@ mg init [--force] [--remote <remote-name>]
 
 ## Description
 
-- Creates a `.mrge` folder in your repo to store CLI metadata.
+- Creates a `.cubic` folder in your repo to store CLI metadata.
 - Checks if your repo is already configured; if so, it will prompt to overwrite or skip.
 - Optionally sets the default remote (e.g., `origin`, `upstream`).
 
 ## Options / Flags
 
-- **`--force`**: Overwrite existing mrge configuration, if any.
+- **`--force`**: Overwrite existing cubic configuration, if any.
 - **`--remote <remote-name>`**: Specify which remote to track by default (defaults to `origin`).
 
 ## Examples
@@ -38,6 +38,7 @@ mg init --remote upstream
 ```
 
 <Note>
-  - Requires an active `.git` directory; run `git init` first if your repo is fresh.
-  - If you are using GitHub CLI authentication, ensure `gh auth login` is completed.
+  - Requires an active `.git` directory; run `git init` first if your repo is
+  fresh. - If you are using GitHub CLI authentication, ensure `gh auth login` is
+  completed.
 </Note>
