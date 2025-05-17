@@ -1,10 +1,9 @@
 ---
 title: 'Reviewing pull requests'
-description: 'Learn how to review pull requests with mrge'
+description: 'Learn how to review pull requests with cubic'
 ---
 
-mrge makes reviewing pull requests fast, intuitive, and keyboard-driven, helping your team ship quality code faster.
-
+cubic makes reviewing pull requests fast, intuitive, and keyboard-driven, helping your team ship quality code faster.
 
 <img
   src="/code-review-platform/images/pr-overview.png"
@@ -35,7 +34,7 @@ Quickly move through diffs to speed up your review:
 
 ## File versions
 
-A *version* snapshot is created on **every push** to the PR branch. Switching versions lets you see **exactly what changed since you last viewed the PR**, rather than the full diff against `main`.
+A _version_ snapshot is created on **every push** to the PR branch. Switching versions lets you see **exactly what changed since you last viewed the PR**, rather than the full diff against `main`.
 
 <img
   src="/code-review-platform/images/version-comparison.png"
@@ -44,7 +43,7 @@ A *version* snapshot is created on **every push** to the PR branch. Switching ve
 />
 
 - **Pick a version:** In the file‑tree header, open the **Version dropdown** and choose the commit snapshot you want to compare.
-- **Review incrementally:** Select *Previous version → Latest* to review only the new changes pushed after your last visit.
+- **Review incrementally:** Select _Previous version → Latest_ to review only the new changes pushed after your last visit.
 - **Debug regressions:** Jump back to the first version to understand how the PR evolved over time.
 - **Spot outdated comments:** Any comment left on a line that changed in a newer version is automatically flagged with an **Outdated** tag, keeping discussions focused on the latest code.
 
@@ -52,12 +51,12 @@ A *version* snapshot is created on **every push** to the PR branch. Switching ve
 
 ## Leaving comments
 
-Comments help guide authors to refine code before merging. mrge supports two types of comments:
+Comments help guide authors to refine code before merging. cubic supports two types of comments:
 
 - **Inline comments:** Click on a specific line number to leave a line‑level comment.
 - **General file comments:** Leave overall comments about the file at the bottom of the diff view.
 
-mrge supports Markdown formatting for rich and readable feedback. Include code snippets clearly by using triple backticks:
+cubic supports Markdown formatting for rich and readable feedback. Include code snippets clearly by using triple backticks:
 
 ````markdown
 ```javascript
@@ -75,7 +74,7 @@ You can also click the **GIF** button—or press `Cmd + Shift + G`—to browse o
 
 ### Suggestions in one click
 
-If you prefix the fenced block with the word `suggestion`, mrge transforms it into an **apply‑in‑one‑click patch**:
+If you prefix the fenced block with the word `suggestion`, cubic transforms it into an **apply‑in‑one‑click patch**:
 
 ````markdown
 ```suggestion
@@ -87,7 +86,7 @@ Reviewers can then click **Apply suggestion** and commit the change instantly.
 
 ### AI‑generated suggestions
 
-Not sure of the exact code? Click the **Generate suggestion** button next to the comment field (or hit `Cmd + Enter` after typing your comment). mrge sends the surrounding context to the AI and inserts a ready‑to‑apply patch inside your comment draft—edit as needed, then hit **Submit**.
+Not sure of the exact code? Click the **Generate suggestion** button next to the comment field (or hit `Cmd + Enter` after typing your comment). cubic sends the surrounding context to the AI and inserts a ready‑to‑apply patch inside your comment draft—edit as needed, then hit **Submit**.
 
 <img
   src="/code-review-platform/images/ai-code-suggestion.png"
@@ -97,7 +96,7 @@ Not sure of the exact code? Click the **Generate suggestion** button next to the
 
 ## Submitting your review
 
-mrge lets you submit your review clearly and quickly. At the top right of the PR page, use the buttons:
+cubic lets you submit your review clearly and quickly. At the top right of the PR page, use the buttons:
 
 - **Approve:** Mark the PR as ready to merge. Shortcut: `Shift + A`.
 - **Request changes:** Indicate that further work is needed. Shortcut: `Shift + R`.
@@ -115,15 +114,13 @@ Your comments automatically save as drafts. When ready, click **Submit review** 
 
 Speed up your workflow with keyboard shortcuts:
 
-| Shortcut                            | Action                         |
-| ----------------------------------- | ------------------------------ |
-| `C` / `D`                           | Changes / Discussion tab       |
-| `J` / `K`                           | Scroll down / up               |
-| `Cmd + Shift + U` / `Cmd + Shift + S` | Unified / Split diff view      |
-| `Option + ↑ / ↓`                    | Previous / next comment        |
-| `Shift + A`                         | Approve PR                     |
-| `Shift + R`                         | Request changes                |
-| `Shift + C`                         | Add general comment            |
-| `Cmd + Shift + G`                   | Open GIF library               |
-
-
+| Shortcut                              | Action                    |
+| ------------------------------------- | ------------------------- |
+| `C` / `D`                             | Changes / Discussion tab  |
+| `J` / `K`                             | Scroll down / up          |
+| `Cmd + Shift + U` / `Cmd + Shift + S` | Unified / Split diff view |
+| `Option + ↑ / ↓`                      | Previous / next comment   |
+| `Shift + A`                           | Approve PR                |
+| `Shift + R`                           | Request changes           |
+| `Shift + C`                           | Add general comment       |
+| `Cmd + Shift + G`                     | Open GIF library          |

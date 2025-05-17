@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "mrge documentation",
+  "name": "cubic documentation",
   "colors": {
     "primary": "#000000",
     "light": "#FFF"
@@ -68,19 +68,19 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:contact@mrge.io"
+        "href": "mailto:contact@cubic.io"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Open app",
-      "href": "https://mrge.io"
+      "href": "https://cubic.io"
     }
   },
   "integrations": {
     "posthog": {
       "apiKey": "phc_DBTnUOZLA1htEQqXnj10SLMQFu7hs77g17HyS0PwNHK",
-      "apiHost": "https://www.mrge.io/ingest"
+      "apiHost": "https://www.cubic.io/ingest"
     }
   }
 }

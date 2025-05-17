@@ -1,59 +1,61 @@
 ---
 title: 'Merge your stack'
-description: 'Use the mrge UI to merge stacked PRs in the correct order.'
+description: 'Use the cubic UI to merge stacked PRs in the correct order.'
 ---
 
-Once your stacked pull requests are approved, **mrge** offers a dedicated UI ([mrge.io](https://mrge.io)) for merging them in the **correct order**—no guesswork or manual rebasing required. Each dependent branch is merged in sequence, preventing conflicts and ensuring a clean commit history.
+Once your stacked pull requests are approved, **cubic** offers a dedicated UI ([cubic.io](https://cubic.io)) for merging them in the **correct order**—no guesswork or manual rebasing required. Each dependent branch is merged in sequence, preventing conflicts and ensuring a clean commit history.
 
 <Note>
-  You *can* merge in GitHub's interface if you prefer. However, the **mrge** UI displays an at-a-glance view of your stack, making it easy to see dependencies, merge partially, or skip certain branches if needed.
+  You *can* merge in GitHub's interface if you prefer. However, the **cubic** UI
+  displays an at-a-glance view of your stack, making it easy to see
+  dependencies, merge partially, or skip certain branches if needed.
 </Note>
 
-***
+---
 
-## Why merge in mrge?
+## Why merge in cubic?
 
-* **Automatic Ordering**: Child branches can't merge until their parent is merged, so you never accidentally merge a downstream branch first.
+- **Automatic Ordering**: Child branches can't merge until their parent is merged, so you never accidentally merge a downstream branch first.
 
-* **Clear Visibility**: See which branches are ready to merge and which are still awaiting review or CI checks.
+- **Clear Visibility**: See which branches are ready to merge and which are still awaiting review or CI checks.
 
-* **Partial Merges**: Land just the bottom few branches if needed, and mrge will restack the remaining branches on top of the newly updated trunk.
+- **Partial Merges**: Land just the bottom few branches if needed, and cubic will restack the remaining branches on top of the newly updated trunk.
 
-***
+---
 
-## 1. Open your repository in mrge
+## 1. Open your repository in cubic
 
 <Steps>
   <Step title="Sign in">
-    Go to [mrge.io](https://mrge.io) and sign in with your GitHub account.
+    Go to [cubic.io](https://cubic.io) and sign in with your GitHub account.
   </Step>
 
-  <Step title="Locate your repo">
-    From your dashboard, select the repository that contains your stacked PRs.
-  </Step>
+<Step title="Locate your repo">
+  From your dashboard, select the repository that contains your stacked PRs.
+</Step>
 
   <Step title="Choose your stack">
-    mrge automatically detects your open PRs and displays them in a stack view.
+    cubic automatically detects your open PRs and displays them in a stack view.
   </Step>
 </Steps>
 
-***
+---
 
 ## 2. Review branches
 
 Before merging, you might want to:
 
-* **Check diffs**: Click each branch to see its changes, commits, and any review comments.
+- **Check diffs**: Click each branch to see its changes, commits, and any review comments.
 
-* **Update the code**: If there's feedback or a last-minute fix, go back to your local setup, edit, and push changes ([Keep your stack updated](/how-to-guides/keep-your-stack-updated)). mrge will reflect those updates automatically.
+- **Update the code**: If there's feedback or a last-minute fix, go back to your local setup, edit, and push changes ([Keep your stack updated](/how-to-guides/keep-your-stack-updated)). cubic will reflect those updates automatically.
 
-***
+---
 
 ## 3. Merge in sequence
 
 <Steps>
   <Step title="Merge the bottom branch">
-    Click **Merge** on the lowest branch in the stack (the "parent"). mrge
+    Click **Merge** on the lowest branch in the stack (the "parent"). cubic
     merges it and updates the trunk automatically.
   </Step>
 
@@ -64,10 +66,12 @@ Before merging, you might want to:
 </Steps>
 
 <Info>
-  **Partial merges**: If you only want to merge the first few branches for now, that's totally fine—mrge restacks the remaining branches on top of the new trunk.
+  **Partial merges**: If you only want to merge the first few branches for now,
+  that's totally fine—cubic restacks the remaining branches on top of the new
+  trunk.
 </Info>
 
-***
+---
 
 ## 4. Sync locally
 
@@ -79,14 +83,14 @@ mg sync
 
 This ensures your local stack is up-to-date and merges are reflected. Merged branches disappear from `mg list` (unless they still have children that aren't merged yet).
 
-***
+---
 
 ## Done!
 
 Your stacked PRs are successfully merged. Time to celebrate—or start another stack!
 
-* **More merging questions?** Head to our [FAQ](/faq-and-troubleshooting).
+- **More merging questions?** Head to our [FAQ](/faq-and-troubleshooting).
 
-* **Got new features?** Rinse and repeat with `mg branch` or `mg branch -t` to automatically create the new branch from trunk.
+- **Got new features?** Rinse and repeat with `mg branch` or `mg branch -t` to automatically create the new branch from trunk.
 
-**Thanks for using mrge!**
+**Thanks for using cubic!**

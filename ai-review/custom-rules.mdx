@@ -3,7 +3,7 @@ title: 'Custom rules'
 description: 'Learn how to define custom rules'
 ---
 
-**Custom rules** allow you to define specific rules that mrge's AI reviewer will enforce on every pull request. These typically go beyond the capabilities of standard linters.
+**Custom rules** allow you to define specific rules that cubic's AI reviewer will enforce on every pull request. These typically go beyond the capabilities of standard linters.
 
 <img
   src="/ai-review/images/ai-review-page.png"
@@ -13,7 +13,7 @@ description: 'Learn how to define custom rules'
 
 ## Creating a custom rule
 
-To define a rule, navigate to the **AI review** page in mrge and click "Add rule".
+To define a rule, navigate to the **AI review** page in cubic and click "Add rule".
 
 Each custom rule includes:
 
@@ -24,9 +24,10 @@ Each custom rule includes:
    A clear, natural-language instruction the AI will use, such as "Flag code that may cause multiple database calls inside loops."
 
 3. **Optional Path Filters**  
-   Use [Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) to limit where the rule applies (or exclude certain paths). This is especially helpful for monorepos, where different directories often require different rules.
+   Use [Glob patterns](<https://en.wikipedia.org/wiki/Glob_(programming)>) to limit where the rule applies (or exclude certain paths). This is especially helpful for monorepos, where different directories often require different rules.
 
    For example:
+
    - **Include**: `backend/**` to apply the rule to only files under a `backend` folder.
    - **Exclude**: `!tests/**` to ignore test files and focus on production code.
 
@@ -63,9 +64,9 @@ When a violation of a rule is detected in a pull request, the AI will comment di
 
 ## Importing rules from Cursor
 
-If your team uses [Cursor](https://www.cursor.so/) rules, you can easily import these into mrge by clicking the **Sync Cursor Rules** button on the AI review page.
+If your team uses [Cursor](https://www.cursor.so/) rules, you can easily import these into cubic by clicking the **Sync Cursor Rules** button on the AI review page.
 
-mrge will analyze your Cursor rule files, suggest suitable custom rules, and let you select which ones you'd like to enable.
+cubic will analyze your Cursor rule files, suggest suitable custom rules, and let you select which ones you'd like to enable.
 
 ## Suggested and popular rules
 
@@ -78,7 +79,7 @@ These sections can help you quickly establish effective review guidelines or ins
 
 ## Limitations
 
-- **Single-check per PR**: mrge currently performs rule checks only once when the pull request is first opened. Subsequent commits won't trigger additional checks yet.
+- **Single-check per PR**: cubic currently performs rule checks only once when the pull request is first opened. Subsequent commits won't trigger additional checks yet.
 - **Potential false positives**: Occasionally, the AI might incorrectly flag or overlook certain scenarios. Consider AI feedback as helpful guidance rather than definitive judgments.
 
 ## Best practices for custom rules
@@ -89,4 +90,4 @@ These sections can help you quickly establish effective review guidelines or ins
 
 ## Next steps
 
-[**Overview**](/ai-review/overview): Understand how mrge reviews pull requests by default.
+[**Overview**](/ai-review/overview): Understand how cubic reviews pull requests by default.

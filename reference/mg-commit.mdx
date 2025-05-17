@@ -1,6 +1,6 @@
 ---
-title: "mg commit"
-description: "Commit changes, optionally auto-generate a new branch"
+title: 'mg commit'
+description: 'Commit changes, optionally auto-generate a new branch'
 ---
 
 ## Name
@@ -15,15 +15,15 @@ mg commit -m <message> [--branch-name <name> | -b]
 
 ## Description
 
-* A pass-through to `git commit -m <message>` but integrates mrge-specific features for branch naming.
+- A pass-through to `git commit -m <message>` but integrates cubic-specific features for branch naming.
 
-* If you specify `-b` without a name, mrge will automatically generate a branch name based on your commit message or config rules.
+- If you specify `-b` without a name, cubic will automatically generate a branch name based on your commit message or config rules.
 
 ## Options / Flags
 
-* **`-m <message>`**: Commit message.
+- **`-m <message>`**: Commit message.
 
-* **`-b, --branch-name <name>`**: Automatically create and/or switch to a new branch named `<name>` as part of the commit.
+- **`-b, --branch-name <name>`**: Automatically create and/or switch to a new branch named `<name>` as part of the commit.
 
 ## Examples
 
@@ -38,5 +38,5 @@ mg commit -m "Add UI tests" -b
 <Note>
   * This feature is optional; standard Git usage is still valid.
 
-  * If using `-b`, ensure your `.mrgeconfig` sets rules for auto-generated names (if desired).
+- If using `-b`, ensure your `.cubicconfig` sets rules for auto-generated names (if desired).
 </Note>

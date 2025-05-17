@@ -3,14 +3,14 @@ title: 'Quickstart'
 description: 'Create your first stacked PR in minutes.'
 ---
 
-In **just a few steps**, you'll create **two stacked pull requests** using `mg` and see them on [mrge.io](https://mrge.io) (or GitHub).
+In **just a few steps**, you'll create **two stacked pull requests** using `mg` and see them on [cubic.io](https://cubic.io) (or GitHub).
 
-***
+---
 
 ## Quick installation (macOS)
 
 ```bash
-brew install mrge-io/homebrew-tap/mg
+brew install cubic-io/homebrew-tap/mg
 ```
 
 <Note>
@@ -18,7 +18,7 @@ brew install mrge-io/homebrew-tap/mg
   installation guide](/installation).
 </Note>
 
-***
+---
 
 ## 1) Initialize & set up
 
@@ -34,7 +34,7 @@ This tells mg which branch is your trunk (`main` or `master`).
   GitHub personal access token or use the GitHub CLI (`gh`) for OAuth.
 </Tip>
 
-***
+---
 
 ## 2) Build your first stack
 
@@ -45,6 +45,7 @@ This tells mg which branch is your trunk (`main` or `master`).
     ```
 
     Make sure you're on the trunk branch.
+
   </Step>
 
   <Step title="Create the first branch">
@@ -59,6 +60,7 @@ This tells mg which branch is your trunk (`main` or `master`).
     main
      └─ feature_1
     ```
+
   </Step>
 
   <Step title="Write code & commit">
@@ -67,6 +69,7 @@ This tells mg which branch is your trunk (`main` or `master`).
     ```
 
     (Or use normal Git commands—unrecognized subcommands pass through to Git.)
+
   </Step>
 
   <Step title="Add a second branch">
@@ -83,6 +86,7 @@ This tells mg which branch is your trunk (`main` or `master`).
      └─ feature_1
         └─ feature_2
     ```
+
   </Step>
 
   <Step title="Push your stack to remote">
@@ -97,20 +101,21 @@ This tells mg which branch is your trunk (`main` or `master`).
 
       If you push a child branch before its parent, mg may fail (the parent PR doesn't exist on remote yet).
     </Tip>
+
   </Step>
 
   <Step title="Check your PRs">
-    Now each branch has an associated PR on [mrge.io](https://mrge.io) or GitHub.
+    Now each branch has an associated PR on [cubic.io](https://cubic.io) or GitHub.
     Open the UI to see them **stacked**. You've created a basic stacked workflow for your features!
   </Step>
 </Steps>
 
-***
+---
 
 ## What's next?
 
-* [Create a single Pull Request](/how-to-guides/create-a-pull-request) for a simpler, one-branch flow.
+- [Create a single Pull Request](/how-to-guides/create-a-pull-request) for a simpler, one-branch flow.
 
-* [Keep Your Stack Updated](/how-to-guides/keep-your-stack-updated) if you need to handle merges or rebase conflicts.
+- [Keep Your Stack Updated](/how-to-guides/keep-your-stack-updated) if you need to handle merges or rebase conflicts.
 
-* [Merge Your Stack](/how-to-guides/merge-your-stack) in the Mrge UI once your PRs are approved.
+- [Merge Your Stack](/how-to-guides/merge-your-stack) in the cubic UI once your PRs are approved.

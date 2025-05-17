@@ -1,38 +1,38 @@
 ---
 title: 'Privacy & security'
-description: 'How mrge keeps your code and data safe'
+description: 'How cubic keeps your code and data safe'
 ---
 
-mrge is built by developers, for developers. We understand that your source code is your most valuable asset, so we designed our systems with security and privacy as a first-principle—not an afterthought.
+cubic is built by developers, for developers. We understand that your source code is your most valuable asset, so we designed our systems with security and privacy as a first-principle—not an afterthought.
 
 ## Our guiding principles
 
 - **Short-lived processing** – We _never_ permanently store your repository's source code. Your code is fetched into an isolated, short-lived sandbox **only** while an AI review is running and is irreversibly deleted as soon as the job completes.
 - **Encryption everywhere** – All data is encrypted **in transit** (TLS 1.2+) and **at rest** (AES-256), including database records and object storage.
-- **Least-privilege access** – The mrge GitHub App requests the minimum scope required to perform reviews. No additional write-or-admin permissions are granted unless they are strictly necessary (see below).
-- **Transparent operations** – We publish this page so that every customer—current or prospective—can understand exactly how we treat their data. If you have questions, email us any time at [contact@mrge.io](mailto:contact@mrge.io). Our data handling practices are further detailed in our [Privacy Policy](https://mrge.io/privacy) and use of the service is governed by our [Terms of Service](https://mrge.io/terms).
+- **Least-privilege access** – The cubic GitHub App requests the minimum scope required to perform reviews. No additional write-or-admin permissions are granted unless they are strictly necessary (see below).
+- **Transparent operations** – We publish this page so that every customer—current or prospective—can understand exactly how we treat their data. If you have questions, email us any time at [contact@cubic.io](mailto:contact@cubic.io). Our data handling practices are further detailed in our [Privacy Policy](https://cubic.io/privacy) and use of the service is governed by our [Terms of Service](https://cubic.io/terms).
 
 ## SOC 2 status
 
-mrge is committed to achieving **SOC 2 Type II** compliance to provide the highest level of security and trust for our customers. We are actively working towards this certification and have implemented many of the required controls internally (such as change management, access management, and vulnerability management). We will update this page and proactively notify customers as we progress through the formal audit process.
+cubic is committed to achieving **SOC 2 Type II** compliance to provide the highest level of security and trust for our customers. We are actively working towards this certification and have implemented many of the required controls internally (such as change management, access management, and vulnerability management). We will update this page and proactively notify customers as we progress through the formal audit process.
 
-## Permissions requested by the mrge GitHub App
+## Permissions requested by the cubic GitHub App
 
-Granting the following scopes allows mrge to read pull-requests, leave review comments, and update PR status checks.
+Granting the following scopes allows cubic to read pull-requests, leave review comments, and update PR status checks.
 
 | Scope                 | Access       | Why we need it                                                                   |
 | --------------------- | ------------ | -------------------------------------------------------------------------------- |
 | **Pull requests**     | Read & write | Post AI-generated review comments and resolve threads when feedback is addressed |
 | **Checks / Statuses** | Read & write | Surface pass/fail status checks for AI review completion                         |
 | **Contents**          | Read-only    | Fetch the diff and surrounding context for each file under review                |
-| **Metadata**          | Read-only    | Display repository information inside the mrge UI                                |
+| **Metadata**          | Read-only    | Display repository information inside the cubic UI                               |
 | **User email**        | Read-only    | Send transactional notifications (e.g. failed review run)                        |
 
-> Note: You can install the mrge App on a single repository or an entire organisation. Access is scoped to the repositories you select during installation, and can be modified at any time from GitHub's "Installed Apps" settings page.
+> Note: You can install the cubic App on a single repository or an entire organisation. Access is scoped to the repositories you select during installation, and can be modified at any time from GitHub's "Installed Apps" settings page.
 
 ## How AI code review works
 
-1. **Event trigger** – Whenever a pull request is opened or updated, GitHub sends mrge a webhook describing the event.
+1. **Event trigger** – Whenever a pull request is opened or updated, GitHub sends cubic a webhook describing the event.
 2. **Ephemeral sandbox** – A new isolated container is launched. The sandbox has no network egress.
 3. **Analysis** – The pull-request diff and _only_ the necessary context needed for reviewing the PR are processed by AI models.
 4. **Comment publication** – The generated review comments are posted back to the PR via the GitHub API.
@@ -42,7 +42,7 @@ At no point is your repository cloned to a long-lived server or stored in a data
 
 ## AI subprocessors
 
-mrge uses best-in-class large-language models hosted by vetted providers (currently OpenAI and Anthropic). Our agreements with these subprocessors explicitly prohibit using your data for model training. Only the minimal code snippets required for the requested analysis are transmitted, and all requests are sent over encrypted channels.
+cubic uses best-in-class large-language models hosted by vetted providers (currently OpenAI and Anthropic). Our agreements with these subprocessors explicitly prohibit using your data for model training. Only the minimal code snippets required for the requested analysis are transmitted, and all requests are sent over encrypted channels.
 
 If your organisation prefers to _completely_ block AI features, please contact us and we can disable them for your workspace.
 
@@ -52,4 +52,4 @@ We record **operational metadata only**—for example, the duration of a review 
 
 ## Reporting a security issue
 
-If you believe you have found a vulnerability in mrge, please email our security team at [contact@mrge.io](mailto:contact@mrge.io) with the subject line "Security Vulnerability". We investigate all reports promptly and appreciate the efforts of the security community.
+If you believe you have found a vulnerability in cubic, please email our security team at [contact@cubic.io](mailto:contact@cubic.io) with the subject line "Security Vulnerability". We investigate all reports promptly and appreciate the efforts of the security community.
